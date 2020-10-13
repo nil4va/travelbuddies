@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corendon</title>
 </head>
+
 <body>
-    
+    <div id="log-in">
+        <div class="container-1">
+
+            <h3>Log In To Meet <br> New Travel Buddies!</h3>
+
+            <form action="/action_page.php">
+                <div class="form-container form-group mb-0">
+                    <label for="fname">Username<br></label>
+                    <input type="text" id="fname" class="form-control" name="username"><br><br>
+                </div>
+
+                <div class="form-container form-group mb-0">
+                    <label for="lname">Password<br></label>
+                    <input type="password" id="password" class="form-control" name="password"><br><br>
+                </div>
+                <div class="cta-container">
+                    <input type="submit" value="Log In" class="cta">
+                </div>
+                <p>Don't have an account yet? <br><a href="">Sign Up</a></p>
+            </form>
+        </div>
+        
+        <div class="container-2">
+            <img src="assets/img/logo.png" class="logo">
+        </div>
+        
+    </div>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
