@@ -122,3 +122,155 @@ a:hover {
         font-size: 6vw;
     }
 }
+
+/* PROFILE PAGE */
+
+#profile-upper-page{
+    flex: 1;
+    background-color: #D81E05;
+    border-radius: 30px 30px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #060608;
+}
+
+#profile-mid-page{
+    color: black;
+    border-radius: 20px;
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    font-weight: 1px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.element1{
+    margin-left: 60px;
+}
+
+.element2{
+    margin-right: 90px;
+}
+
+.tag-button{
+    margin-left: 30px;
+    background-color: #D81E05;
+    padding: 25px;
+    font-weight: bold;
+}
+
+#profile-lower-page{
+    color: black;
+    font-weight: 1px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tag-button:hover {
+    background-color: #C01E05;
+  }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+input:checked + .slider {
+    background-color: #D81E05;
+  }
+  
+input:focus + .slider {
+    box-shadow: 0 0 10px #D81E05;
+  }
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  #language-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #delete-profile{
+      color: darkred;
+      background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden; 
+  }
+
+  #show-hide-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .language-button{
+    margin: 0 20px 0 0px;
+    padding: 0;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+  }
+
+  .profile-title{
+    display: flex;
+  }
+
+  #gear1{
+      font-size: 20px;
+      margin-left: 20px;
+  }
