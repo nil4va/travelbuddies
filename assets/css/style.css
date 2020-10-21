@@ -106,6 +106,11 @@ a:hover {
 #log-in .container-1 form {
     width: 50%;  
     margin-top: 50px 0;
+    white-space: nowrap;
+}
+
+#log-in .container-1 form p {
+    padding-bottom: 20px;
 }
 
 #log-in label {
@@ -144,14 +149,39 @@ a:hover {
     background-size: cover;
     flex: 1;
     background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#log-in .container-2 img {
-    max-width: 70%;
-    max-height: 70%;
+#log-in .carousel {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#log-in .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+#log-in .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+#log-in .carousel-item {
+    width: 100%;
+    height: 32em;
+}
+
+#log-in .carousel-caption {
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+#log-in .chatbox-image {
+    margin: 0 auto;
+}
+
+#log-in .carousel-item img {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @media(max-width: 992px) {
@@ -163,7 +193,7 @@ a:hover {
 @media(max-width: 768px) {
 
     #log-in {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     #log-in .container-1 h3 {
