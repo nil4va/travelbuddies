@@ -13,30 +13,36 @@
 <body>
     <div id="log-in">
         <div class="container-1">
-
-            <h3>Login To Meet <br> New Travel Buddies!</h3>
+            
+            <h3>Register To Meet <br> New Travel Buddies!</h3>
 
             <form action="">
                 <div class="form-group">
+                    <label for="firstname">Enter Name<br></label>
+                    <input type="text" id="firstname" class="form-control" name="firstName">
+
+                    <label for="lastname">Enter Last Name<br></label>
+                    <input type="text" id="lastname" class="form-control" name="lastname">
+
                     <label for="username">Enter Username<br></label>
-                    <input type="text" id="fname" class="form-control" name="username">
+                    <input type="text" id="username" class="form-control" name="username">
 
                     <label for="password">Enter Password<br></label>
-                    <input type="password" id="fname" class="form-control" name="password">
+                    <input type="password" id="password" class="form-control" name="password">
                 </div>
 
                 <div class="cta-container">
                     <input type="submit" value="Log In" class="cta">
                 </div>
 
-                <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+                <p>Already have an account? <a href="index.html">Log in</a></p>
             </form>
         </div>
-
+        
         <div class="container-2">
             <img src="assets/img/logo.png" class="logo">
         </div>
-
+        
     </div>
     <script src="assets/js/main.js"></script>
 </body>
