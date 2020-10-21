@@ -65,7 +65,7 @@ a:hover {
 }
 
 #log-in .container-1 form {
-    width: 50%;  
+    width: 50%;
     margin-top: 50px 0;
 }
 
@@ -286,7 +286,7 @@ a:hover {
 }
 
 @media(max-width: 992px) {
-    
+
 }
 
 @media(max-width: 768px) {
@@ -302,4 +302,79 @@ a:hover {
     margin: 0 auto;
     float: none;
     margin-bottom: 10px;
+}
+
+/* CHATBOX */
+
+#chatbox .container {
+    width: 600px;
+    padding-top: 50px;
+}
+
+#chatbox .card {
+    border: 1px solid #D81E05;
+}
+
+#chatbox .card-header {
+    color: #FFF;
+}
+
+#chatbox .card-header .profile-info {
+    padding-top: 4px;
+    float: left;
+}
+
+#chatbox .card-header button {
+    float: right;
+}
+
+#chatbox .card-header,
+#chatbox .card-footer {
+    background-color: #D81E05;
+}
+
+#chatbox .card-footer input {
+    color: #495057;
+}
+
+#chatbox .dot {
+    height: 10px;
+    width: 10px;
+
+    border-radius: 50%;
+
+    margin-right: 5px;
+
+    background-color: #2ECC40;
+
+    display: inline-block;
+}
+
+#chatbox .row:not(:first-of-type) {
+    margin-top: 5px;
+}
+
+#chatbox .profile-pic {
+    height: 40px;
+    width: 40px;
+
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 50%;
+}
+
+#chatbox .message {
+    font-size: 15px;
+
+    margin-top: 5px;
+
+    color: #212529;
+
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+
+    padding: 10px;
+}
+
+#chatbox .text-muted {
+    margin-left: 11px;
 }
