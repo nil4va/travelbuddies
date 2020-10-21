@@ -18,6 +18,22 @@ a:hover {
     text-decoration: none;
 }
 
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.logo {
+    height: 80px;
+}
+
+.bg-corendon {
+    background-color: #d81e05;
+}
+
 /* LOGIN SCREEN */
 
 #log-in {
@@ -285,4 +301,12 @@ a:hover {
     #profile-page {
         flex-direction: column;
     }
+}
+
+/* Matches */
+#matches .card-potential-buddy {
+    width: 400px;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
 }
