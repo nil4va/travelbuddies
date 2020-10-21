@@ -46,7 +46,6 @@ a:hover {
 #log-in .container-1 {
     flex: 1;
     background-color: #D81E05;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,12 +58,6 @@ a:hover {
     text-align: center;
 }
 
-#log-in .form-container {
-    height: 30%;
-    width: 90%;
-    margin: 0 auto;
-}
-
 #log-in .container-1 h3 {
     text-align: center;
     font-size: 3em;
@@ -72,7 +65,12 @@ a:hover {
 }
 
 #log-in .container-1 form {
-    width: 50%;
+    width: 50%;  
+    margin-top: 50px 0;
+}
+
+#log-in label {
+    margin-top: 20px;
 }
 
 #log-in .cta-container {
@@ -102,7 +100,6 @@ a:hover {
 
 
 #log-in .container-2 {
-    border-radius: 20px;
     background-image: url('../img/background-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -127,11 +124,7 @@ a:hover {
 @media(max-width: 768px) {
 
     #log-in {
-        flex-direction: column;
-    }
-
-    #log-in .container-1 {
-        border-radius: 20px 20px 0px 0px;
+        flex-direction: column-reverse;
     }
 
     #log-in .container-1 h3 {
