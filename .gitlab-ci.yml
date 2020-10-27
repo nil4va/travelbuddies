@@ -1,21 +1,15 @@
 development:
   only:
-    - develop@hva-fys/website
-  before_script:
-    - apt-get update && apt-get install git-ftp -y -qq
+    - develop
   script:
     - git ftp push --user $SFTP_FYS_USER --passwd $SFTP_FYS_PASS sftp://sftp.fys.cloud:22/dev --insecure
 production:
   only:
-    - master@hva-fys/website
-  before_script:
-    - apt-get update && apt-get install git-ftp -y -qq
+    - master
   script:
     - git ftp push --user $SFTP_FYS_USER --passwd $SFTP_FYS_PASS sftp://sftp.fys.cloud:22/live --insecure
 mockup:
   only:
-    - mockup@hva-fys/website
-  before_script:
-    - apt-get update && apt-get install git-ftp -y -qq
+    - mockup
   script:
     - git ftp push --user $SFTP_FYS_USER --passwd $SFTP_FYS_PASS sftp://sftp.fys.cloud:22/mockup --insecure
