@@ -34,6 +34,45 @@ a:hover {
     background-color: #d81e05;
 }
 
+.chatbox-frame {
+    display: none;
+    height: calc(100% - 3em);
+    max-width: 30em;
+    max-height: 36em;
+    line-height: 1.25;
+    border-radius: 8px 8px 0 8px;
+    position: fixed;
+    right: 7em;
+    bottom: 2em;
+    filter: drop-shadow(0 0.25em 1em rgba(0,0,0,0.1));
+    transform-origin: right bottom;
+    z-index: 999;
+}
+
+.chatbox-frame.open {
+    display: block;
+    -webkit-animation: openingSentenceFast .5s ease-in-out;
+    -moz-animation: openingSentenceFast .5s ease-in-out;
+    animation: openingSentenceFast .5s ease-in-out;
+}
+
+.chatbox-avatar {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    width: 4em;
+    height: 4em;
+    border-radius: 2em;
+    background-color: #a2a2a2;
+    background-image: url(/assets/img/profile-male.png);
+    background-repeat: no-repeat;
+    background-size: 4em 4em;
+    background-position: center center;
+    cursor: pointer;
+    filter: drop-shadow(0 0.25em 1em rgba(0,0,0,0.1));
+    z-index: 999;
+}
+
 /* LOGIN SCREEN */
 
 #log-in {
@@ -134,6 +173,11 @@ a:hover {
 
 /* PROFILE PAGE */
 
+#profile-page .avatar {
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
 #profile-page #profile-upper-page {
     flex: 1;
@@ -144,6 +188,7 @@ a:hover {
     align-items: center;
     text-align: center;
     color: #060608;
+    margin-bottom: 20px;
 }
 
 #profile-page #profile-mid-page {
