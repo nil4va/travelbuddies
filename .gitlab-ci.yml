@@ -4,18 +4,18 @@ development:
   before_script:
     - apt-get update && apt-get install git-ftp -y -qq
   script:
-    - git ftp init --user $SFTP_FYS_USER --passwd $SFTP_FYS_PASS sftp://sftp.fys.cloud:22/dev --insecure
+    - git ftp push --user $SFTP_FYS_USER --passwd $SFTP_FYS_PASS sftp://sftp.fys.cloud:22/dev --insecure
 production:
   only:
     - master@hva-fys/website
   before_script:
     - apt-get update && apt-get install git-ftp -y -qq
   script:
-    - git ftp init --user $SFTP_FYS_USER --passwd $SFTP_FYS_PASS sftp://sftp.fys.cloud:22/live --insecure
+    - git ftp push --user $SFTP_FYS_USER --passwd $SFTP_FYS_PASS sftp://sftp.fys.cloud:22/live --insecure
 mockup:
   only:
     - mockup@hva-fys/website
   before_script:
     - apt-get update && apt-get install git-ftp -y -qq
   script:
-    - git ftp init --user $SFTP_FYS_USER --passwd $SFTP_FYS_PASS sftp://sftp.fys.cloud:22/mockup --insecure
+    - git ftp push --user $SFTP_FYS_USER --passwd $SFTP_FYS_PASS sftp://sftp.fys.cloud:22/mockup --insecure
