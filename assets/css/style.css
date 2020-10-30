@@ -581,31 +581,10 @@ a:hover {
     animation-timing-function: linear;
 }
 
-#categories .tag-button-active {
-    background-color: #FF0000;
-    animation-name: rotate;
-    animation-duration: .25s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-#categories @keyframes rotate {
-    0% {
-        transform: rotate(-8deg);
-    }
-
-    50% {
-        transform: rotate(2deg);
-    }
-
-    100% {
-        transform: rotate(-8deg);
-    }
-}
-
-
-#categories .tag-button-clicked {
-    background-color: #FF0000;
+ @keyframes rotate {
+    0% {transform: rotate(-2deg);}
+    50% {transform: rotate(2deg);}
+    100% {transform: rotate(-2deg);}
 }
 
 #categories .logo-for-catagories {
