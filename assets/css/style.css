@@ -360,6 +360,10 @@ a:hover {
     margin-left: 20px;
 }
 
+.edit-field {
+    margin-top: 20px;
+}
+
 @media(max-width: 992px) {}
 
 @media(max-width: 768px) {
