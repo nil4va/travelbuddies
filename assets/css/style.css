@@ -465,7 +465,7 @@ a:hover {
 
 #categories .amount-of-tags {
     background-color: #D81E05;
-    margin: 70px 70px 0 70px;
+    margin: 70px 0 0 0;
     display: flex;
     border-radius: 30px 30px 0 0;
     height: 230px;
@@ -486,9 +486,8 @@ a:hover {
 #categories .scroll-current-tags {
     border-radius: 0 0 30px 30px;
     background-color: #D81E05;
-    margin: 0 70px 0 70px;
     cursor: pointer;
-    height: 45px;
+    height: auto;
     white-space: nowrap;
     color: #fff;
     overflow-x: scroll;
@@ -557,10 +556,6 @@ a:hover {
     text-align: center;
 }
 
-#categories .search-button {
-    height: 19px;
-}
-
 #categories .tag-button {
     border-radius: 20px;
     background-color: #C00A05;
@@ -608,18 +603,6 @@ a:hover {
 #categories .tag-button-clicked {
     background-color: #FF0000;
 }
-
-#categories #back-button {
-    border-radius: 10px;
-    background-color: #D81E05;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    left: 50%;
-    top: 50%;
-    position: relative;
-}
-
 
 #categories .logo-for-catagories {
     float: left;
