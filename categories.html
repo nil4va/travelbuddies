@@ -48,11 +48,10 @@
 
         <div class="row">
             <div class="col-md-6">
-                <button class="collapsible">
+                <button class="collapsible button">
                     <div class="logo-for-catagories"><img
                             src="assets/img/Hobbies-hobby-activity-freetime-lifestyle-512.webp" class="image-hobby">
-                    </div><span class="buttontext">Hobbys</span> 〉
-                </button>
+                    </div><span class="button">Hobbys</span></button>
                 <div class="content">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
@@ -82,11 +81,10 @@
                     <button class="tag-button">Learning new languages</button>
                     <button class="tag-button">Calligraphy</button>
                 </div>
-                <button class="collapsible">
+                <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/movies-logo.png" class="image-movies">
                     </div>
-                    <span class="buttontext">Movies</span> 〉
-                </button>
+                    <span class="button">Movies</span></button>
                 <div class="content">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
@@ -106,10 +104,9 @@
                     <button class="tag-button">Comedy</button>
                     <button class="tag-button">Anime</button>
                 </div>
-                <button class="collapsible">
+                <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/country-logo.png" class="image-countries">
-                    </div><span class="buttontext">Countries</span> 〉
-                </button>
+                    </div><span class="button">Countries</span></button>
                 <div class="content">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
@@ -174,10 +171,9 @@
                     <button class="tag-button">Singapore</button>
                     <button class="tag-button">Netherlands</button>
                 </div>
-                <button class="collapsible">
+                <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/books.png" class="image-books">
-                    </div><span class="buttontext">Books</span> 〉
-                </button>
+                    </div><span class="button">Books</span></button>
                 <div class="content">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
@@ -209,10 +205,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <button class="collapsible">
+                <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/music-icon.png" class="image-music"></div>
-                    <span class="buttontext">Music</span> 〉
-                </button>
+                    <span class="button">Music</span></button>
                 <div class="content">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
@@ -232,10 +227,9 @@
                     <button class="tag-button">R&B</button>
                     <button class="tag-button">Rap</button>
                 </div>
-                <button class="collapsible">
+                <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/games-logo.png" class="image-games"></div>
-                    <span class="buttontext">Games</span> 〉
-                </button>
+                    <span class="button">Games</span></button>
                 <div class="content">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
@@ -257,11 +251,10 @@
                     <button class="tag-button">Board Game or Card Game</button>
                     <button class="tag-button">Educational Game</button>
                 </div>
-                <button class="collapsible">
+                <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/sports-logo.png" class="image-sports">
                     </div>
-                    <span class="buttontext">Sports</span> 〉
-                </button>
+                    <span class="button">Sports</span></button>
                 <div class="content">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
@@ -282,10 +275,9 @@
                     <button class="tag-button">Chess</button>
                     <button class="tag-button">Yoga</button>
                 </div>
-                <button class="collapsible">
+                <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/language-logo.jpg" class="image-languages">
-                    </div><span class="buttontext">Languages</span> 〉
-                </button>
+                    </div><span class="button">Languages</span></button>
                 <div class="content">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
@@ -325,7 +317,7 @@
     <script src="/assets/js/elementBuilder.js"></script>
 
     <script>
-        var coll = document.getElementsByClassName("collapsible");
+        var coll = document.getElementsByClassName("collapsible button");
         var i;
 
         for (i = 0; i < coll.length; i++) {
@@ -344,13 +336,15 @@
             window.history.back();
         }
 
-        $(".tag-button").one('click', function () {
+        $(".tag-button").on('click', function () {
             $('.scroll-current-tags').append($('<button>').addClass('tag-button').text($(this)
                 .text()
             ));
-            $('.js-help-text').remove();
-            $(this).remove();
+            $('.js-help-text').detach();
+            $(this).detach();
         });
+
+
 
         $(document).ready(function () {
             $(".searchbox").on("keyup", function () {
