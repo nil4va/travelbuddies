@@ -20,7 +20,7 @@
     <main id="categories" class="container text-black mb-4">
         <div class="amount-of-tags">
             <h1><span class="text-profiel"> <span class="name-and-amout-of-tags">Tamara</span>, momenteel heb jij <span
-                        class="name-and-amout-of-tags">7</span>
+                        class="name-and-amout-of-tags tag-counter">0</span>
                     tags&nbsp;!</span>
             </h1>
             <div class="profielfoto">
@@ -106,7 +106,7 @@
                 </div>
                 <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/country-logo.png" class="image-countries">
-                    </div><span class="button">Countries</span></button>
+                    </div><span class="button">Countries </span></button>
                 <div class="content">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
@@ -319,6 +319,7 @@
     <script>
         var coll = document.getElementsByClassName("collapsible button");
         var i;
+        
 
         for (i = 0; i < coll.length; i++) {
             coll[i].addEventListener("click", function () {
@@ -342,6 +343,8 @@
             ));
             $('.js-help-text').detach();
             $(this).detach();
+            var tags = getElementsByClassName("tags-counter");
+            $('.scroll-current-tags').children('button').length($(this).text(tags));
         });
 
 
