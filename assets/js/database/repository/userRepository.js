@@ -20,6 +20,13 @@ class UserRepository {
         return await result;
     }
 
+    async getFirstByPasswordResetToken(passwordResetToken) {
+        let result = FYSCloud.API.queryDatabase(
+            "SELECT * FROM user WHERE passwordResetToken='" + passwordResetToken + "'"
+        );
+        return await result;
+    }
+
     async createUser(firstName, lastName, username, email, password, BirthDate) {
         FYSCloud.API.queryDatabase(
             "INSERT INTO `user` (`id`, `firstName`, `lastName`, `name`, `email`, `password`, `birthDate`) VALUES (NULL, ?, ?, ?, ?, ?, ?)",
@@ -31,6 +38,20 @@ class UserRepository {
         FYSCloud.API.queryDatabase(
             "UPDATE `user` set profilePictureUrl=? WHERE id = ?",
             [profilePictureUrl, id]
+        );
+    }
+
+    async updatePasswordResetToken(id, passwordResetToken) {
+        FYSCloud.API.queryDatabase(
+            "UPDATE `user` set passwordResetToken=? WHERE id = ?",
+            [passwordResetToken, id]
+        );
+    }
+
+    async updatePasswordByPasswordResetToken(passwordResetToken, password) {
+        FYSCloud.API.queryDatabase(
+            "UPDATE `user` set passwordResetToken = ?, password = ? WHERE passwordResetToken = ?",
+            [null, password, passwordResetToken]
         );
     }
 }
