@@ -21,7 +21,15 @@ let $session = new Promise(function (resolve, reject) {
                 attributes = JSON.stringify([]);
             }
 
-            let sessionUser = new SessionUser(firstResult.name, firstResult.email);
+            let sessionUser = new SessionUser(
+                firstResult.id,
+                firstResult.firstName,
+                firstResult.lastName,
+                firstResult.birthDate,
+                firstResult.name,
+                firstResult.email,
+                firstResult.profilePictureUrl,
+            );
 
             let result = {
                 'user': sessionUser,

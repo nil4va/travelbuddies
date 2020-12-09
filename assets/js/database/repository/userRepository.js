@@ -26,4 +26,11 @@ class UserRepository {
             [firstName, lastName, username, email, password, BirthDate]
         );
     }
+
+    async updateProfilePictureUrl(id, profilePictureUrl) {
+        FYSCloud.API.queryDatabase(
+            "UPDATE `user` set profilePictureUrl=? WHERE id = ?",
+            [profilePictureUrl, id]
+        );
+    }
 }
