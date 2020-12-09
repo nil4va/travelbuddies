@@ -53,7 +53,6 @@ $(document).ready(function () {
     });
 
     function updateAvatar(avatarUrl) {
-        console.log(avatarUrl)
         if (avatarUrl === '') {
             return;
         }
