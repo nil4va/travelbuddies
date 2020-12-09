@@ -29,5 +29,8 @@ let $session = new Promise(function (resolve, reject) {
             };
             resolve(result);
         });
+        return;
     }
+
+    reject(SessionEnum.ERROR_NOT_LOGGED_IN);
 });
