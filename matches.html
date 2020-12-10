@@ -12,10 +12,15 @@
 
 <body id="matches">
     <!-- Include: Header -->
-    <div class="js-element-builder" data-file="header" data-variables='{"title":"Matches", "subTitle": "Op deze pagina vind je een overzicht van jouw matches."}'></div>
+    <div class="js-element-builder" data-file="header"
+        data-variables='{"title":"Matches", "subTitle": "Op deze pagina vind je een overzicht van jouw matches."}'>
+    </div>
 
     <!-- Main content -->
+
     <main role="main" class="container text-black mb-4">
+        <!-- Include: Ad -->
+        <div class="js-element-builder" data-file="ad"></div>
         <div class="row">
             <div class="col-md-10">
                 <h3 class="pb-3 mb-4 font-italic border-bottom">
@@ -68,6 +73,7 @@
 
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/elementBuilder.js"></script>
+
 </body>
 
 </html>
