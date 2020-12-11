@@ -77,6 +77,25 @@ a:hover {
     z-index: 999;
 }
 
+.h-divider{
+    margin-top:5px;
+    margin-bottom:5px;
+    height:1px;
+    width:100%;
+    border-top:1px solid gray;
+    opacity: .5;
+}
+
+/* LOCALIZATION */
+
+[data-translate] {
+    visibility: hidden;
+}
+
+[data-translate][translated] {
+    visibility: visible;
+}
+
 /* ADS */
 
 #adContainer {
@@ -450,9 +469,10 @@ a:hover {
     margin-left: 20px;
 }
 
-.edit-field {
-    margin-top: 20px;
+#profile #modalWindow {
+    width: 100%;
 }
+
 
 @media(max-width: 992px) {}
 
@@ -464,6 +484,7 @@ a:hover {
 }
 
 /* Matches */
+
 #matches .card-potential-buddy {
     width: 400px;
     margin: 0 auto;
@@ -471,6 +492,58 @@ a:hover {
     margin-bottom: 10px;
 }
 
+#matches .card {
+    cursor: pointer;
+}
+
+#matches .card-title {
+    font-size: 1em;
+}
+
+#matches .profile-overview-image {
+    width: 100%;
+}
+
+#matches .profile-overview-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#matches .profile-overview-text-container h5 {
+    font-size: 2em;
+    align-self: flex-start;
+}
+
+#matches .profile-overview-text-container h6 {
+    align-self: flex-start;
+    font-size: 1em ;
+}
+
+#matches .modal-header {
+    background-color: #D81E05;
+    color: #fff;
+}
+
+#matches .profile-overview-btn {
+    color: #fff;
+    background-color: #28a745;
+}
+
+@media (min-width: 576px) {
+    #matches .modal-dialog {
+        max-width: 70%;
+        display: flex;
+        position: relative;
+    }
+}
+
+@media(max-width: 768px) {
+    #matches .profile-overview-text-container h5 {
+        margin-top: 50px;
+    }
+}
 /* CHATBOX */
 
 #chatbox .container {
