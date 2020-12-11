@@ -10,6 +10,10 @@ class SessionUser {
         this.passwordResetToken = passwordResetToken;
     }
 
+    getId() {
+        return this.id;
+    }
+
     getName() {
         return this.name;
     }

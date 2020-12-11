@@ -49,8 +49,9 @@
                         <h1>⚙</h1>
                     </div>
 
-                    <img src="assets/img/profile-female.jpg" class="avatar js-avatar">
-                    <h2 class="js-display-name"></h2>
+                    <img src="assets/img/profile-female.jpg" data-toggle="modal" data-target="#avatarUpload"
+                        class="avatar">
+                    <h2 id="profile-name-and-age"></h2>
                 </div>
             </div>
 
@@ -59,13 +60,13 @@
                 <form action="">
 
                     <p>✎ Edit birthday
-                        <input type='date' id='date' class="form-control" /></p>
+                        <input type='date' id='birthday' class="form-control" /></p>
 
-                    <label for="function">✎ Edit function</label>
-                    <input type="text" id="function" name="function" class="form-control">
+                    <label for="occupation">✎ Edit occupation</label>
+                    <input type="text" id="occupation" name="occupation" class="form-control">
 
-                    <label for="function" class="edit-field">✎ Edit biography</label>
-                    <input type="text" id="function" name="function" class="form-control">
+                    <label for="biography" class="edit-field">✎ Edit biography</label>
+                    <input type="text" id="biography" name="biography" class="form-control">
                 </form>
 
                 <a href="categories.html"><button class="tag-button">edit tags</button></a>
@@ -130,6 +131,41 @@
 
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/elementBuilder.js"></script>
+
+    <script>
+        $(document).ready(async () => {
+            let userId = (await $session).user.id;
+
+            let user = (await FYSCloud.API.queryDatabase(
+                "SELECT * FROM `user` WHERE `id` = " + userId
+            ))[0];
+
+            function calculateAge(birthday) { // birthday is a date
+                var ageDifMs = Date.now() - birthday;
+                var ageDate = new Date(ageDifMs); // miliseconds from epoch
+                return Math.abs(ageDate.getUTCFullYear() - 1970);
+            }
+
+            let leeftijd = calculateAge(new Date(user.birthDate));
+
+            $("#profile-name-and-age").text(user.name + " (" + leeftijd + ")");
+
+            $("#birthday").val(user.birthDate.split("T")[0]);
+            $("#occupation").val(user.occupation);
+            $("#biography").val(user.biography);
+
+            $("input").focusout(async e => {
+                let birthday = $("#birthday").val() || new Date().toDateString();
+                let occupation = $("#occupation").val();
+                let biography = $("#biography").val();
+
+                await FYSCloud.API.queryDatabase(
+                    "UPDATE `user` SET `birthDate`='" + birthday + "', `occupation`='" +
+                    occupation + "',`biography`='" + biography + "' WHERE `id` = " + userId
+                );
+            });
+        });
+    </script>
 </body>
 
 </html>

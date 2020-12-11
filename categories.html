@@ -8,6 +8,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.min.js"></script>
+    <script src="/assets/js/fyscloud/config/config.js"></script>
+
+    <!-- Session -->
+    <script src="/assets/js/session/entity/user.js"></script>
+
+    <script src="/assets/js/database/repository/userRepository.js"></script>
+    <script src="/assets/js/database/inserter/sessionInserter.js"></script>
+
+    <script src="/assets/js/utils/cookie.js"></script>
+    <script src="/assets/js/utils/random.js"></script>
+
+    <script src="/assets/js/session/enum/sessionEnum.js"></script>
+    <script src="/assets/js/session/session.js"></script>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/elementBuilder.js"></script>
+
+    <script src="/assets/js/pages/matches.js"></script>
 </head>
 
 <body>
@@ -23,8 +45,8 @@
         <!-- Include: Ad -->
         <div class="js-element-builder" data-file="ad"></div>
         <div class="amount-of-tags">
-            <h1><span class="text-profiel"> <span class="name-and-amout-of-tags">Tamara</span>, momenteel heb jij <span
-                        class="name-and-amout-of-tags tag-counter">0</span>
+            <h1><span class="text-profiel"> <span class="name-and-amout-of-tags, name-of-user"></span>, momenteel heb
+                    jij <span class="name-and-amout-of-tags tag-counter">0</span>
                     tags&nbsp;!</span>
             </h1>
             <div class="profielfoto">
@@ -41,10 +63,25 @@
             <div class="col-md-4">
                 <button class="btn btn-danger mt-5 text-right" onclick="goBack()">Go Back</button>
             </div>
+
             <div class="col-md-4 text-center">
                 <p> ⭒ Kies een categorie ⭒ </p>
             </div>
+
             <div class="col-md-4">
+                <button id="explanationButton" class="btn btn-danger mt-5 ">klik voor uitleg</button>
+            </div>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>
+                        Wat zijn Tags ?
+                    </h1>
+                    <p>Laat iedereen weten wat je interesses zijn door ze toe te voegen aan je profiel. Zo vind je je perfecte buddy, speciaal voor jou !  <br><br> klik op
+                        een
+                        categorie om te beginnen !</p>
+                </div>
 
             </div>
 
@@ -57,159 +94,50 @@
                             src="assets/img/Hobbies-hobby-activity-freetime-lifestyle-512.webp" class="image-hobby">
                     </div><span class="button">Hobbys</span>
                 </button>
-                <div class="content">
+                <div class="content content-hobbys">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="button">find your tag !</button>
                         </div>
                     </div>
-                    <button class="tag-button">Gardening</button>
-                    <button class="tag-button">Gamen</button>
-                    <button class="tag-button">Photography</button>
-                    <button class="tag-button">Reading</button>
-                    <button class="tag-button">Play at Cards</button>
-                    <button class="tag-button">Collecting</button>
-                    <button class="tag-button">Scrapbooking</button>
-                    <button class="tag-button">Drawing</button>
-                    <button class="tag-button">Writing</button>
-                    <button class="tag-button">Singing</button>
-                    <button class="tag-button">Playing an Instrument</button>
-                    <button class="tag-button">Meditating</button>
-                    <button class="tag-button">Tarot</button>
-                    <button class="tag-button">Public Speaking</button>
-                    <button class="tag-button">Life coaching</button>
-                    <button class="tag-button">Planning Weddings</button>
-                    <button class="tag-button">Walking Outside</button>
-                    <button class="tag-button">Compose Music</button>
-                    <button class="tag-button">Climbing</button>
-                    <button class="tag-button">Learning new languages</button>
-                    <button class="tag-button">Calligraphy</button>
                 </div>
                 <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/movies-logo.png" class="image-movies">
                     </div>
                     <span class="button">Movies</span>
                 </button>
-                <div class="content">
+                <div class="content content-movies">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="button">find your tag !</button>
                         </div>
                     </div>
-                    <button class="tag-button">Disney</button>
-                    <button class="tag-button">Silent</button>
-                    <button class="tag-button">Science fiction</button>
-                    <button class="tag-button">Romance</button>
-                    <button class="tag-button">Musical</button>
-                    <button class="tag-button">LGBT</button>
-                    <button class="tag-button">Horror</button>
-                    <button class="tag-button">Fantasy</button>
-                    <button class="tag-button">Documentary</button>
-                    <button class="tag-button">Comedy</button>
-                    <button class="tag-button">Anime</button>
                 </div>
                 <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/country-logo.png" class="image-countries">
                     </div><span class="button">Countries </span>
                 </button>
-                <div class="content">
+                <div class="content content-countries">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="button">find your tag !</button>
                         </div>
                     </div>
-                    <button class="tag-button">France</button>
-                    <button class="tag-button">Spain</button>
-                    <button class="tag-button">United States</button>
-                    <button class="tag-button">China</button>
-                    <button class="tag-button">Italy</button>
-                    <button class="tag-button">Turkey</button>
-                    <button class="tag-button">Mexico</button>
-                    <button class="tag-button">Thailand</button>
-                    <button class="tag-button">Germany</button>
-                    <button class="tag-button">United Kingdom</button>
-                    <button class="tag-button">Morocco</button>
-                    <button class="tag-button">Egypt</button>
-                    <button class="tag-button">South Africa</button>
-                    <button class="tag-button">Tunisia</button>
-                    <button class="tag-button">Algeria</button>
-                    <button class="tag-button">Zimbabwe</button>
-                    <button class="tag-button">Ivory Coast</button>
-                    <button class="tag-button">Botwana</button>
-                    <button class="tag-button">Namibia</button>
-                    <button class="tag-button">Mozambique</button>
-                    <button class="tag-button">Canada</button>
-                    <button class="tag-button">Argentinia</button>
-                    <button class="tag-button">Dominican Republic</button>
-                    <button class="tag-button">Brazil</button>
-                    <button class="tag-button">Chile</button>
-                    <button class="tag-button">Cuba</button>
-                    <button class="tag-button">Peru</button>
-                    <button class="tag-button">Colombia</button>
-                    <button class="tag-button">Japan</button>
-                    <button class="tag-button">Malaysia</button>
-                    <button class="tag-button">Hong Kong</button>
-                    <button class="tag-button">Macau</button>
-                    <button class="tag-button">Vietnam</button>
-                    <button class="tag-button">India</button>
-                    <button class="tag-button">South Korea</button>
-                    <button class="tag-button">Germany</button>
-                    <button class="tag-button">Austria</button>
-                    <button class="tag-button">Greece</button>
-                    <button class="tag-button">Portugal</button>
-                    <button class="tag-button">United Arab Emirates</button>
-                    <button class="tag-button">Saudi Arabia</button>
-                    <button class="tag-button">Egypt</button>
-                    <button class="tag-button">Iran</button>
-                    <button class="tag-button">Jordan</button>
-                    <button class="tag-button">Bahrain</button>
-                    <button class="tag-button">Oman</button>
-                    <button class="tag-button">Australia</button>
-                    <button class="tag-button">Mauritius</button>
-                    <button class="tag-button">Tunisia</button>
-                    <button class="tag-button">Sudan</button>
-                    <button class="tag-button">Uganda</button>
-                    <button class="tag-button">Kenya</button>
-                    <button class="tag-button">Costa Rica</button>
-                    <button class="tag-button">Panama</button>
-                    <button class="tag-button">Singapore</button>
-                    <button class="tag-button">Netherlands</button>
                 </div>
                 <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/books.png" class="image-books">
                     </div><span class="button">Books</span>
                 </button>
-                <div class="content">
+                <div class="content content-books">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="button">find your tag !</button>
                         </div>
                     </div>
-                    <button class="tag-button">True Crime</button>
-                    <button class="tag-button">Self-Help</button>
-                    <button class="tag-button">Poetry</button>
-                    <button class="tag-button">Memoir</button>
-                    <button class="tag-button">History</button>
-                    <button class="tag-button">Essays</button>
-                    <button class="tag-button">Cookbooks</button>
-                    <button class="tag-button">Biographies & Autobiographies</button>
-                    <button class="tag-button">Women's Fiction</button>
-                    <button class="tag-button">Suspense and Thrillers</button>
-                    <button class="tag-button">Short Stories</button>
-                    <button class="tag-button">Science Fiction (Sci-Fi)</button>
-                    <button class="tag-button">Romance</button>
-                    <button class="tag-button">Literary Fiction</button>
-                    <button class="tag-button">Horror</button>
-                    <button class="tag-button">Historical Fiction</button>
-                    <button class="tag-button">Fantasy</button>
-                    <button class="tag-button">Detective and Mystery</button>
-                    <button class="tag-button">Comic Book or Graphic Novel</button>
-                    <button class="tag-button">Classics</button>
-                    <button class="tag-button">Action and Adventure</button>
                 </div>
             </div>
             <div class="col-md-6">
@@ -217,102 +145,50 @@
                     <div class="logo-for-catagories"><img src="assets/img/music-icon.png" class="image-music"></div>
                     <span class="button">Music</span>
                 </button>
-                <div class="content">
+                <div class="content content-music">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="button">find your tag !</button>
                         </div>
                     </div>
-                    <button class="tag-button">Blues</button>
-                    <button class="tag-button">Jazz</button>
-                    <button class="tag-button">Rhythm and Blues</button>
-                    <button class="tag-button">Rock and Roll</button>
-                    <button class="tag-button">Rock</button>
-                    <button class="tag-button">Country</button>
-                    <button class="tag-button">Soul</button>
-                    <button class="tag-button">Dance</button>
-                    <button class="tag-button">Hip Hop</button>
-                    <button class="tag-button">R&B</button>
-                    <button class="tag-button">Rap</button>
                 </div>
                 <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/games-logo.png" class="image-games"></div>
                     <span class="button">Games</span>
                 </button>
-                <div class="content">
+                <div class="content content-games">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="button">find your tag !</button>
                         </div>
                     </div>
-                    <button class="tag-button">Action</button>
-                    <button class="tag-button">Action-Adventure</button>
-                    <button class="tag-button">Adventure</button>
-                    <button class="tag-button">Role-playing</button>
-                    <button class="tag-button">Simulation</button>
-                    <button class="tag-button">Strategy</button>
-                    <button class="tag-button">Esports</button>
-                    <button class="tag-button">Simulation</button>
-                    <button class="tag-button">Art Game</button>
-                    <button class="tag-button">Trivia Game</button>
-                    <button class="tag-button">Part Game</button>
-                    <button class="tag-button">Board Game or Card Game</button>
-                    <button class="tag-button">Educational Game</button>
                 </div>
                 <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/sports-logo.png" class="image-sports">
                     </div>
                     <span class="button">Sports</span>
                 </button>
-                <div class="content">
+                <div class="content content-sports">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="button">find your tag !</button>
                         </div>
                     </div>
-                    <button class="tag-button">Soccer</button>
-                    <button class="tag-button">Volleyball</button>
-                    <button class="tag-button">Basketball</button>
-                    <button class="tag-button">Romance</button>
-                    <button class="tag-button">Swimming/Polo</button>
-                    <button class="tag-button">Tennis</button>
-                    <button class="tag-button">Badminton</button>
-                    <button class="tag-button">Gymnastic</button>
-                    <button class="tag-button">Golf</button>
-                    <button class="tag-button">Boxing</button>
-                    <button class="tag-button">Chess</button>
-                    <button class="tag-button">Yoga</button>
                 </div>
                 <button class="collapsible button">
                     <div class="logo-for-catagories"><img src="assets/img/language-logo.jpg" class="image-languages">
                     </div><span class="button">Languages</span>
                 </button>
-                <div class="content">
+                <div class="content content-languages">
                     <div class="input-group mb-3 mt-3">
                         <input type="text" class="form-control searchbox" placeholder="Search..">
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="button">find your tag !</button>
                         </div>
                     </div>
-                    <button class="tag-button">English</button>
-                    <button class="tag-button">Mandarin Chinese</button>
-                    <button class="tag-button">Hindi</button>
-                    <button class="tag-button">Spanish</button>
-                    <button class="tag-button">Arabic</button>
-                    <button class="tag-button">Bangla/Bengali</button>
-                    <button class="tag-button">Russian</button>
-                    <button class="tag-button">Portugese</button>
-                    <button class="tag-button">Dutch</button>
-                    <button class="tag-button">French</button>
-                    <button class="tag-button">German</button>
-                    <button class="tag-button">Italian</button>
-                    <button class="tag-button">Romanian</button>
-                    <button class="tag-button">Turkish</button>
-                    <button class="tag-button">Flemish</button>
-                    <button class="tag-button">Frisian</button>
                 </div>
             </div>
         </div>
@@ -329,6 +205,26 @@
     <script src="/assets/js/elementBuilder.js"></script>
 
     <script>
+        var modal = document.getElementById("myModal");
+
+        var btn = document.getElementById("explanationButton");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
         var coll = document.getElementsByClassName("collapsible button");
         var i;
 
@@ -349,24 +245,411 @@
             window.history.back();
         }
 
-        $(".tag-button").on('click', function () {
-            $('.scroll-current-tags').append($('<button>').addClass('tag-button').text($(this)
-                .text()
-            ));
-            $('.js-help-text').detach();
-            $(this).detach();
-            var tags = getElementsByClassName("tags-counter");
-            $('.scroll-current-tags').children('button').length($(this).text(tags));
-        });
-
-
-
         $(document).ready(function () {
             $(".searchbox").on("keyup", function () {
                 var value = $(this).val().toLowerCase();
                 $(this).parent().parent().find('.tag-button').filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
+            });
+        });
+
+        $(document).ready(async () => {
+            /*
+             let categories_and_tags = {
+                 "Hobbys": [
+                     "Tuinieren",
+                     "Gamen",
+                     "Fotografie",
+                     "Lezen",
+                     "Kaartspelen",
+                     "Verzamelen",
+                     "Tekenenen",
+                     "Schrijven",
+                     "Zingen",
+                     "Instrument bespelen",
+                     "Mediteren",
+                     "Tarot",
+                     "Publiek spreken",
+                     "Life Coaching",
+                     "Trouwfeesten plannen",
+                     "Buiten lopen",
+                     "Muziek componeren",
+                     "Klimmen",
+                     "Nieuwe Talen leren",
+                     "Kaligrafie"
+                 ],
+
+                 "Movies": [
+                     "Disney",
+                     "Silent",
+                     "Science fiction",
+                     "Romantiek",
+                     "Musical",
+                     "LGBT",
+                     "Horror",
+                     "Fantasie",
+                     "Documentaire",
+                     "Komedie",
+                     "Anime"
+                 ],
+
+                 "Countries": [
+                     "Frankrijk",
+                     "Spanje",
+                     "Amerika",
+                     "China",
+                     "Italië",
+                     "Turkije",
+                     "Mexico",
+                     "Thailand",
+                     "Duitsland",
+                     "Verenigde Koninkrijk",
+                     "Marokko",
+                     "Egypte",
+                     "Zuid-Afrika",
+                     "Tunesië",
+                     "Algerije",
+                     "Zimbabwe",
+                     "Ivoorkust",
+                     "Botswanië",
+                     "Namibië",
+                     "Mozambique",
+                     "Canada",
+                     "Argentinië",
+                     "Dominicaanse Republiek",
+                     "Brazilië",
+                     "Chili",
+                     "Cuba",
+                     "Peru",
+                     "Colombië",
+                     "Japan",
+                     "Malesië",
+                     "Hong Kong",
+                     "Macau",
+                     "Vietnam",
+                     "India",
+                     "Zuid-Korea",
+                     "Oostenrijk",
+                     "Portugal",
+                     "Griekenland",
+                     "Verenigde Arabische Emiraten",
+                     "Saudi-Arabië",
+                     "Sudan",
+                     "Uganda",
+                     "Kenya",
+                     "Costa Rica",
+                     "Panama",
+                     "Singapore",
+                     "Nederland"
+                 ],
+
+                 "Books": [
+                     "True Crime",
+                     "Self-Help",
+                     "Poetry",
+                     "Memoir",
+                     "History",
+                     "Essays",
+                     "Cookbooks",
+                     "Biographies en Autobiographies",
+                     "Suspense en Thrillers",
+                     "Short Stories",
+                     "Science Fiction",
+                     "Romance",
+                     "Literary Fiction",
+                     "Horror Books",
+                     "Historical Fiction",
+                     "Fantasy",
+                     "Detective en Mystery",
+                     "Comic Book or Graphic Novel",
+                     "Classics",
+                     "Action en Adventure"
+                 ],
+
+                 "Music": [
+                     "Blues",
+                     "Jazz",
+                     "Rhythm en Blues",
+                     "RocknRoll",
+                     "Rock",
+                     "Country",
+                     "Soul",
+                     "Dance",
+                     "Hip Hop",
+                     "RnB",
+                     "Rap"
+                 ],
+
+                 "Games": [
+                     "Action",
+                     "Action-Adventure",
+                     "Adventure",
+                     "Role-playing",
+                     "Simulation",
+                     "Strategy",
+                     "Esports",
+                     "Simulation",
+                     "Art Game",
+                     "Trivia Game",
+                     "Part Game",
+                     "Board Game or Card Game",
+                     "Educational Game"
+                 ],
+
+                 "Sports": [
+                     "Soccer",
+                     "Volleyball",
+                     "Basketball",
+                     "Romance",
+                     "Swimming/Polo",
+                     "Tennis",
+                     "Badminton",
+                     "Gymnastic",
+                     "Golven",
+                     "Boksen",
+                     "Schaken",
+                     "Yoga"
+                 ],
+
+                 "Languages": [
+                     "Engels",
+                     "Mandarijn Chinees",
+                     "Hindi",
+                     "Spaans",
+                     "Arabisch",
+                     "Bengaals",
+                     "Russisch",
+                     "Portugees",
+                     "Nederlands",
+                     "Frans",
+                     "Duits",
+                     "Italië",
+                     "Roemeens",
+                     "Turks",
+                     "Vlaams",
+                     "Fries"
+                 ],
+             };
+             */
+
+            async function testScores() {
+                await FYSCloud.API.queryDatabase(
+                    "DELETE FROM `tag_category_score` WHERE `tag_category_score`.`userId` BETWEEN 1 AND 1000000;"
+                )
+
+                let usersAndScores = [];
+
+                for (let i = 0; i < 10; i++) {
+                    usersAndScores.push({
+                        userId: i,
+
+                        hobbys: Math.floor(Math.random() * Math.floor(20)),
+                        movies: Math.floor(Math.random() * Math.floor(20)),
+                        countries: Math.floor(Math.random() * Math.floor(20)),
+                        books: Math.floor(Math.random() * Math.floor(20)),
+                        music: Math.floor(Math.random() * Math.floor(20)),
+                        games: Math.floor(Math.random() * Math.floor(20)),
+                        sports: Math.floor(Math.random() * Math.floor(20)),
+                        languages: Math.floor(Math.random() * Math.floor(20))
+                    })
+                }
+
+                let insertValues = [];
+
+                for (let userAndScores of usersAndScores) {
+                    insertValues.push("('" + userAndScores.userId + "', '" + userAndScores.hobbys +
+                        "', '" + userAndScores.movies + "', '" + userAndScores.countries + "', '" +
+                        userAndScores.books + "', '" + userAndScores.music + "', '" + userAndScores
+                        .games + "', '" + userAndScores.sports + "', '" + userAndScores.languages +
+                        "')");
+                }
+
+                await FYSCloud.API.queryDatabase(
+                    "INSERT INTO tag_category_score (userId, hobbys, movies, countries, books, music, games, sports, languages) VALUES " +
+                    insertValues.join(", ")
+                );
+            }
+
+            // console.log(await FYSCloud.API.queryDatabase(
+            //     "SELECT * FROM `tag_category_score` ORDER BY ABS(hobbys - 2), ABS(movies - 2), ABS(countries - 2), ABS(books - 2), ABS(music - 2), ABS(games - 2), ABS(sports - 2), ABS(languages - 2);"
+            // ));
+            // return
+
+            // testScores();
+            // return
+
+            let categories_and_tags = {};
+
+            let tag_category = await FYSCloud.API.queryDatabase("SELECT * FROM `tag_category`;");
+
+            let tag_to_id = {};
+            let id_to_tag = {};
+            let tag_to_category = {};
+
+
+            for (let category of tag_category) {
+                let category_tags = await FYSCloud.API.queryDatabase(
+                    "SELECT * FROM `tag` WHERE `categoryId` = " + category.id + ";");
+
+                categories_and_tags[category.name] = category_tags.reduce(function (tagNamen, tag) {
+                    tagNamen.push(tag.name);
+
+                    tag_to_id[tag.name] = tag.id;
+                    id_to_tag[tag.id] = tag.name;
+
+                    tag_to_category[tag.name] = tag_to_category[tag.name] || "";
+                    tag_to_category[tag.name] = category.name;
+
+                    return tagNamen;
+                }, []);
+            }
+
+            async function updateTags() {
+                let geselecteerdeTags = $(".scroll-current-tags .tag-button");
+
+                await FYSCloud.API.queryDatabase(
+                    "DELETE FROM `user_tag` WHERE `user_tag`.`userId` = " + userId + ";")
+
+                if (geselecteerdeTags.length == 0) {
+                    return;
+                }
+
+                let insertValues = [];
+
+                let tag_category_score = {
+                    hobbys: 0,
+                    music: 0,
+                    movies: 0,
+                    games: 0,
+                    countries: 0,
+                    sports: 0,
+                    books: 0,
+                    languages: 0
+                };
+
+                console.log(tag_to_category);
+
+                for (let tag of geselecteerdeTags) {
+                    insertValues.push("('" + userId + "', '" + tag_to_id[$(tag).text()] + "')");
+                    tag_category_score[tag_to_category[$(tag).text()].toLowerCase()]++;
+                }
+
+                await FYSCloud.API.queryDatabase(
+                    "INSERT INTO user_tag (userId, tagId) VALUES " + insertValues.join(", ")
+                );
+
+                await FYSCloud.API.queryDatabase(
+                    "DELETE FROM `tag_category_score` WHERE `userId` = " + userId + ";"
+                );
+
+                await FYSCloud.API.queryDatabase(
+                    "INSERT INTO `tag_category_score` (userId, hobbys, music, movies, games, countries, sports, books, languages) VALUES (" +
+                    userId + ", " + tag_category_score.hobbys + ", " + tag_category_score.music +
+                    ", " + tag_category_score.movies + ", " + tag_category_score.games + ", " +
+                    tag_category_score.countries + ", " + tag_category_score.sports + ", " +
+                    tag_category_score.books + ", " + tag_category_score.languages + ");"
+                );
+            }
+
+            let userId = (await $session).user.id;
+
+            let geselecteerdeTags = await FYSCloud.API.queryDatabase(
+                "SELECT * FROM `user_tag` WHERE `userId` = " + userId + ";");
+            geselecteerdeTags = geselecteerdeTags.reduce(function (tagNamen, tag) {
+                tagNamen.push(id_to_tag[tag.tagId]);
+                return tagNamen;
+            }, []);
+
+            if (geselecteerdeTags.length) {
+                $(".tag-counter").text(geselecteerdeTags.length);
+                $('.js-help-text').hide();
+            }
+
+            for (let tag of geselecteerdeTags) {
+                $(".scroll-current-tags").append('<button class="tag-button">' + tag + '</button>');
+            }
+
+            for (let categorie of Object.keys(categories_and_tags)) {
+                for (let tag of categories_and_tags[categorie]) {
+                    if (geselecteerdeTags.includes(tag)) {
+                        continue;
+                    }
+
+                    $('.content.content-' + categorie.toLowerCase()).append('<button class="tag-button">' +
+                        tag + '</button>')
+                }
+            }
+
+            async function saveTags() {
+                await FYSCloud.API.queryDatabase(
+                    "DELETE FROM `tag` WHERE `tag`.`id` BETWEEN 1 AND 1000000;")
+
+                await FYSCloud.API.queryDatabase(
+                    "DELETE FROM `tag_category` WHERE `tag_category`.`id` BETWEEN 1 AND 1000000;")
+
+                for (let categorie of Object.keys(categories_and_tags)) {
+
+                    let categorieId = (await FYSCloud.API.queryDatabase(
+                        "INSERT INTO tag_category (name) VALUES ('" + categorie + "')"
+                    )).insertId
+
+                    console.log(categorie)
+                    console.log(categorieId)
+
+                    let insertValues = [];
+
+                    for (let tag of categories_and_tags[categorie]) {
+                        insertValues.push("('" + tag + "', '" + categorieId + "')");
+                    }
+
+                    await FYSCloud.API.queryDatabase(
+                        "INSERT INTO tag (name, categoryId) VALUES " + insertValues.join(", ")
+                    );
+                }
+            };
+
+            $("body").on('click', ".content .tag-button", function (e) {
+                $(".tag-counter").text(
+                    $(".scroll-current-tags .tag-button").length + 1
+                );
+
+                let tag = $(this).text();
+                $(".scroll-current-tags").append('<button class="tag-button">' + tag + '</button>');
+                $('.js-help-text').hide();
+                $(this).detach();
+
+                updateTags();
+            });
+
+            $("body").on("click", ".scroll-current-tags .tag-button", function (e) {
+                let t = $(this).text();
+                let categorie = "";
+
+                CAT_KEYS:
+                    for (let cat of Object.keys(categories_and_tags)) {
+                        for (let tag of categories_and_tags[cat]) {
+                            if (tag == t) {
+                                categorie = cat;
+                                break CAT_KEYS;
+                            }
+                        }
+                    }
+
+                $(".content.content-" + categorie.toLowerCase()).append(
+                    '<button class="tag-button">' + t + '</button>');
+
+                $(this).detach();
+
+                $(".tag-counter").text(
+                    $(".scroll-current-tags .tag-button").length
+                );
+
+                if (!$(".scroll-current-tags .tag-button").length) {
+                    $('.js-help-text').show();
+                }
+
+                updateTags();
             });
         });
     </script>
