@@ -23,7 +23,7 @@
         <div class="js-element-builder" data-file="ad"></div>
         <div class="row">
             <div class="col-md-10">
-                <h3 class="pb-3 mb-4 font-italic border-bottom">
+                <h3 class="pb-3 mb-4 font-italic border-bottom text-center">
                     Potentiele travelbuddy
                 </h3>
 
@@ -48,18 +48,51 @@
                     Matches
                 </h3>
 
-                <div class="card mb-3">
+                <div class="card mb-3" data-toggle="modal" data-target="#modalWindow">
+                    <img class="card-img-top" src="assets/img/profile/girl.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                    </div>
+                </div>    
+                <div class="card mb-3" data-toggle="modal" data-target="#modalWindow">
                     <img class="card-img-top" src="assets/img/profile/girl.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">John Doe</h5>
                     </div>
                 </div>
-                <div class="card mb-3">
-                    <img class="card-img-top" src="assets/img/profile/girl.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
+
+                <!-- MODAL WINDOW -->
+                <div class="modal fade" id="modalWindow" tabindex="-1" role="dialog" >
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">John Doe</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="/assets/img/profile-female.jpg" class="profile-overview-image">
+                                    </div>
+                                    <div class="col-md-6 profile-overview-text-container">
+                                        <h5 class="text-left">John Doe</h5>
+                                        <h6 class="text-left">Over mij</h6>
+                                        <p class="text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur saepe voluptate debitis</p>
+                                        <span class="h-divider">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-succes profile-overview-btn">Chat met mij!</button>
+                            </div>
+                        </div>
+                      </div>
                     </div>
-                </div>
+                  </div>
+
             </div>
         </div>
     </main>
