@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
-    let $userRepository = new UserRepository;
-    let $sessionInserter = new sessionInserter;
+    let userRepository = new UserRepository;
+    let SESSIONInserter = new sessionInserter;
 
-    $session.then(function(data) {
+    SESSION.then(function(data) {
         // Redirect already logged in.
         window.location.replace('/matches.html');
     })
@@ -14,7 +14,7 @@ $(document).ready(function () {
         let email = $(this).find('.js-email').val();
         let password = $(this).find('.js-password').val();
         
-        let databaseUser = $userRepository.getFirstByEmail(email)
+        let databaseUser = userRepository.getFirstByEmail(email)
         databaseUser.then(function(data) {
             let loginValid = false;
             let firstRecord = data[0];
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
             // Create session
             let sessionToken = generateRandomStringRounds(2);
-            $sessionInserter.insertSession(firstRecord.id, sessionToken);
+            SESSIONInserter.insertSession(firstRecord.id, sessionToken);
             setCookie(SessionEnum.SESSION_COOKIE_NAME, sessionToken, 7);
 
             // Redirect to matches

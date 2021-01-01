@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    let $userRepository = new UserRepository;
+    let userRepository = new UserRepository;
 
-    $session.then(function (data) {
+    SESSION.then(function (data) {
         // Redirect already logged in.
         window.location.replace('/matches.html');
     })
@@ -21,7 +21,7 @@ $(document).ready(function () {
 
         let password = $(this).find('.js-password').val();
 
-        let databaseUser = $userRepository.getFirstByPasswordResetToken(resetToken)
+        let databaseUser = userRepository.getFirstByPasswordResetToken(resetToken)
         databaseUser.then(function (data) {
             let firstRecord = data[0];
 
@@ -30,7 +30,7 @@ $(document).ready(function () {
                 return;
             }
 
-            $userRepository.updatePasswordByPasswordResetToken(resetToken, password).then(result => {
+            userRepository.updatePasswordByPasswordResetToken(resetToken, password).then(result => {
                 alert('Your password has been updated, you can now login.');
                 window.location.replace('/');
             });

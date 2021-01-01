@@ -1,12 +1,12 @@
 
-let $session = new Promise(function (resolve, reject) {
-    let $userRepository = new UserRepository;
+const SESSION = new Promise(function (resolve, reject) {
+    let userRepository = new UserRepository;
 
     let sessionToken = getCookieByName(SessionEnum.SESSION_COOKIE_NAME);
     let hasSessionCookie = sessionToken !== undefined;
 
     if (hasSessionCookie === true) {
-        let databaseUserPromise = $userRepository.getFirstByToken(sessionToken);
+        let databaseUserPromise = userRepository.getFirstByToken(sessionToken);
 
         databaseUserPromise.then(function (data) {
 

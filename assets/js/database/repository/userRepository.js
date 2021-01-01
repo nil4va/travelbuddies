@@ -1,28 +1,32 @@
 class UserRepository {
     async getFirstByToken(sessionToken) {
         let result = FYSCloud.API.queryDatabase(
-            "SELECT * FROM session LEFT JOIN user ON user.id = session.userId WHERE `token`= '" + sessionToken + "'"
+            "SELECT * FROM session LEFT JOIN user ON user.id = session.userId WHERE `token`=?",
+            [sessionToken]
         );
         return await result;
     }    
     
     async getFirstByEmail(email) {
         let result = FYSCloud.API.queryDatabase(
-            "SELECT * FROM user WHERE email='" + email + "'"
+            "SELECT * FROM user WHERE email=?",
+            [email]
         );
         return await result;
     }
     
     async getFirstByUsername(username) {
         let result = FYSCloud.API.queryDatabase(
-            "SELECT * FROM user WHERE name='" + username + "'"
+            "SELECT * FROM user WHERE name=?",
+            [username]
         );
         return await result;
     }
 
     async getFirstByPasswordResetToken(passwordResetToken) {
         let result = FYSCloud.API.queryDatabase(
-            "SELECT * FROM user WHERE passwordResetToken='" + passwordResetToken + "'"
+            "SELECT * FROM user WHERE passwordResetToken=?",
+            [passwordResetToken]
         );
         return await result;
     }

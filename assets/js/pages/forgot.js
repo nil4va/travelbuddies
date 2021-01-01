@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    let $userRepository = new UserRepository;
+    let userRepository = new UserRepository;
 
-    $session.then(function (data) {
+    SESSION.then(function (data) {
         // Redirect already logged in.
         window.location.replace('/matches.html');
     })
@@ -12,7 +12,7 @@ $(document).ready(function () {
 
         let email = $(this).find('.js-email').val();
 
-        let databaseUser = $userRepository.getFirstByEmail(email)
+        let databaseUser = userRepository.getFirstByEmail(email)
         databaseUser.then(function (data) {
             let firstRecord = data[0];
 
@@ -34,7 +34,7 @@ $(document).ready(function () {
                 'If the link does not work, copy & paste the following into your browser: ' + link
             ];
 
-            $userRepository.updatePasswordResetToken(firstRecord.id, token).then(result => {
+            userRepository.updatePasswordResetToken(firstRecord.id, token).then(result => {
 
                 FYSCloud.API.sendEmail({
                     from: {
