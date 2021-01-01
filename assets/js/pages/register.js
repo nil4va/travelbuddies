@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    let $userRepository = new UserRepository;
+    let userRepository = new UserRepository;
 
-    $session.then(response => {
+    SESSION.then(response => {
         // Already logged in
         window.location.replace('/matches.html');
     }).catch(reason => {
@@ -19,19 +19,19 @@ $(document).ready(function () {
         let password = $(this).find('.js-password').val();
         let birthDate = $(this).find('.js-birthdate').val();
 
-        $userRepository.getFirstByEmail(email).then(result => {
+        userRepository.getFirstByEmail(email).then(result => {
             if (result.length !== 0) {
                 alert('An user with this email already exists.');
                 return;
             }
 
-            $userRepository.getFirstByUsername(username).then(result => {
+            userRepository.getFirstByUsername(username).then(result => {
                 if (result.length !== 0) {
                     alert('A user with this username already exists.');
                     return;
                 }
 
-                $userRepository.createUser(
+                userRepository.createUser(
                     firstName,
                     lastName,
                     username,

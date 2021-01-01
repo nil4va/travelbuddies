@@ -552,7 +552,7 @@
                 );
             }
 
-            let userId = (await $session).user.id;
+            let userId = (await SESSION).user.id;
 
             let geselecteerdeTags = await FYSCloud.API.queryDatabase(
                 "SELECT * FROM `user_tag` WHERE `userId` = " + userId + ";");

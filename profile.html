@@ -134,7 +134,7 @@
 
     <script>
         $(document).ready(async () => {
-            let userId = (await $session).user.id;
+            let userId = (await SESSION).user.id;
 
             let user = (await FYSCloud.API.queryDatabase(
                 "SELECT * FROM `user` WHERE `id` = " + userId

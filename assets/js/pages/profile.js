@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    let $userRepository = new UserRepository;
+    let userRepository = new UserRepository;
 
-    $session.then(function (data) {
+    SESSION.then(function (data) {
         // User has session
         sessionUser = data.user;
 
@@ -31,7 +31,7 @@ $(document).ready(function () {
                         fileLocation,
                         data.url
                     ).done(function (url) {
-                        $userRepository.updateProfilePictureUrl(sessionUser.id, url);
+                        userRepository.updateProfilePictureUrl(sessionUser.id, url);
                         updateAvatar(url);
 
                         // Remove modal
