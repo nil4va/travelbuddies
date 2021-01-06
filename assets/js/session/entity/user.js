@@ -1,5 +1,5 @@
 class SessionUser {
-    constructor(id, firstName, lastName, birthDate, name, email, profilePictureUrl, passwordResetToken) {
+    constructor(id, firstName, lastName, birthDate, name, email, profilePictureUrl, passwordResetToken, admin) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -8,6 +8,7 @@ class SessionUser {
         this.email = email;
         this.profilePictureUrl = profilePictureUrl;
         this.passwordResetToken = passwordResetToken;
+        this.admin = admin;
     }
 
     getId() {
@@ -68,5 +69,13 @@ class SessionUser {
 
     setPasswordResetToken(passwordResetToken) {
         this.passwordResetToken = passwordResetToken;
+    }
+
+    isAdmin() {
+        return this.admin;
+    }
+
+    setIsAdmin(admin) {
+        this.admin = admin;
     }
 }
