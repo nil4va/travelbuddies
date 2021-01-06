@@ -1,5 +1,5 @@
 class SessionUser {
-    constructor(id, firstName, lastName, birthDate, name, email, profilePictureUrl, passwordResetToken, admin) {
+    constructor(id, firstName, lastName, birthDate, name, email, profilePictureUrl, passwordResetToken, admin, language) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -9,6 +9,7 @@ class SessionUser {
         this.profilePictureUrl = profilePictureUrl;
         this.passwordResetToken = passwordResetToken;
         this.admin = admin;
+        this.language = language;
     }
 
     getId() {
@@ -77,5 +78,13 @@ class SessionUser {
 
     setIsAdmin(admin) {
         this.admin = admin;
+    }
+
+    getLanguage() {
+        return this.language;
+    }
+
+    setLanguage(language) {
+        this.language = language;
     }
 }

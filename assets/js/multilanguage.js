@@ -124,13 +124,16 @@ $(document).ready(function () {
 
     FYSCloud.Localization.setTranslations(translations);
 
-    SESSION.then(function (session) {
-        FYSCloud.Localization.switchLanguage(session.user.language);
+    SESSION.then(function (sessionData) {
+        FYSCloud.Localization.switchLanguage(sessionData.user.language);
+
+        updateElementBuilderLanguage();
 
         $("#localizationLanguageSwitch").on("change", () => {
             FYSCloud.Localization.switchLanguage($("#localizationLanguageSwitch").val());
             FYSCloud.API.queryDatabase("UPDATE user SET language = ? WHERE id = ?",
-                [$("#localizationLanguageSwitch").val(), session.user.id])
+                [$("#localizationLanguageSwitch").val(), sessionData.user.id])
+            updateElementBuilderLanguage();
         })
     });
     
