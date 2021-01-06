@@ -32,6 +32,7 @@ const SESSION = new Promise(function (resolve, reject) {
                 firstResult.profilePictureUrl,
                 firstResult.passwordResetToken,
                 firstResult.admin,
+                firstResult.language,
             );
 
             let result = {

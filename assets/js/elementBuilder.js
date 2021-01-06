@@ -17,20 +17,36 @@ $(document).ready(function () {
 
     function fetchAndCreatePageElement(element) {
         let file = element.data('file');
-        let variables = element.data('variables');
 
         $.get('/layout/include/' + file + '.html', function (data) {
-
-            if (variables instanceof Object) {
-                // Replace the placeholders with the data from the JSON object.
-                for (const [key, value] of Object.entries(variables)) {
-                    data = data.replace('{{ ' + key  + ' }}', value);
-                }
-            }
-
-            // Inject the content into the page, and remove the (unneeded) div.
             element.after(data);
             element.remove();
+
+            updateElementBuilderLanguage();
+            updateNavbarUser();
         });
     }
 });
+
+function updateElementBuilderLanguage() {
+    // Translate included files
+    let translationTexts = $('.js-element-builder-text');
+    translationTexts.each(function (index) {
+        let element = $(this);
+        let name = element.data('name');
+        let file = element.data('file');
+        let value = element.text();
+
+        let elementsToReplace = $('.js-element-builder-text-target');
+        elementsToReplace.each(function (index) {
+            let elementToReplace = $(this);
+
+            let elementToReplaceName = elementToReplace.data('name');
+            let elementToReplaceFile = elementToReplace.data('file');
+
+            if (elementToReplaceName === name && elementToReplaceFile === file) {
+                elementToReplace.text(value);
+            }
+        });
+    });
+}

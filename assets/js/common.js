@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    updateNavbarUser();
+});
+
+function updateNavbarUser() {
     SESSION.then(function (sessionData) {
         let user = sessionData.user;
         let usernameElement = $('<span>').text(user.name);
@@ -11,11 +15,13 @@ $(document).ready(function () {
             )
         }
 
-        $('.js-navbar-username').append(usernameElement);
+        let navbarUser = $('.js-navbar-username');
+        navbarUser.empty();
+        navbarUser.append(usernameElement);
 
     }).catch(function (reason) {
         if (reason === SessionEnum.ERROR_NOT_LOGGED_IN) {
             window.location.replace('/');
         }
     });
-});
+}
