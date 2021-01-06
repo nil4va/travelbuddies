@@ -63,7 +63,7 @@
                     <div class="card-body">
                         <h5 class="card-title">John Doe</h5>
                     </div>
-                </div>    
+                </div>
                 <div class="card mb-3" data-toggle="modal" data-target="#modalWindow">
                     <img class="card-img-top" src="assets/img/profile/girl.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -72,40 +72,45 @@
                 </div>
 
                 <!-- MODAL WINDOW -->
-                <div class="modal fade" id="modalWindow" tabindex="-1" role="dialog" >
+                <div class="modal fade" id="modalWindow" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">John Doe</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/profile-female.jpg" class="profile-overview-image">
-                                    </div>
-                                    <div class="col-md-6 profile-overview-text-container">
-                                        <h5 class="text-left">John Doe</h5>
-                                        <h6 class="text-left">Over mij</h6>
-                                        <p class="text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur saepe voluptate debitis</p>
-                                        <span class="h-divider">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">John Doe</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <img src="/assets/img/profile-female.jpg" class="profile-overview-image">
+                                        </div>
+                                        <div class="col-md-6 profile-overview-text-container">
+                                            <h5 class="text-left">John Doe</h5>
+                                            <h6 class="text-left">Over mij</h6>
+                                            <p class="text-left">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                elit. Tenetur saepe voluptate debitis</p>
+                                            <span class="h-divider">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-succes profile-overview-btn">Chat met mij!</button>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-succes profile-overview-btn">Chat met
+                                        mij!</button>
+                                </div>
                             </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
 
             </div>
         </div>
     </main>
+
+    <!-- Include: footer -->
+    <div class="js-element-builder" data-file="footer"></div>
 
     <!-- Include: Chatbox -->
     <div class="js-element-builder" data-file="chatbox"></div>
@@ -265,11 +270,11 @@
 
                 if (match_exists.length > 0) {
                     await FYSCloud.API.queryDatabase(
-                        "UPDATE `user_match` SET `otherUserAccepted` = " + Number(approved) + ", `otherUserDeclined` = " + Number(! approved) + " WHERE `userId` = " + otherUserId + " AND `otherUserId` = " + userId + ";"
+                        "UPDATE `user_match` SET `otherUserAccepted` = " + Number(approved) + ", `otherUserDeclined` = " + Number(!approved) + " WHERE `userId` = " + otherUserId + " AND `otherUserId` = " + userId + ";"
                     );
                 } else {
                     await FYSCloud.API.queryDatabase(
-                        "INSERT INTO `user_match` (userId, otherUserId, otherUserAccepted, otherUserDeclined) VALUES (" + userId + ", " + otherUserId + ", false, " + (! approved) + ");"
+                        "INSERT INTO `user_match` (userId, otherUserId, otherUserAccepted, otherUserDeclined) VALUES (" + userId + ", " + otherUserId + ", false, " + (!approved) + ");"
                     );
                 }
             }
