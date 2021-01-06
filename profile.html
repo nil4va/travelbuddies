@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Corendon | Matches</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -31,6 +32,7 @@
 
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/elementBuilder.js"></script>
+
 </head>
 
 <body>
@@ -58,40 +60,29 @@
 
             <div id="profile-mid-page">
                 <form action="">
+                    <label for="birthday" data-translate="profile.editBirthday">✎ Edit birthday</label>
+                    <input type='date' id='date' class="form-control" />
 
-                    <p>✎ Edit birthday
-                        <input type='date' id='birthday' class="form-control" /></p>
+                    <label for="function" data-translate="profile.editFunction">✎ Edit function</label>
+                    <input type="text" id="function" name="function" class="form-control">
 
-                    <label for="occupation">✎ Edit occupation</label>
-                    <input type="text" id="occupation" name="occupation" class="form-control">
-
-                    <label for="biography" class="edit-field">✎ Edit biography</label>
+                    <label for="biography" class="edit-field" data-translate="profile.editBio">✎ Edit biography</label>
                     <input type="text" id="biography" name="biography" class="form-control">
                 </form>
-
-                <a href="categories.html"><button class="tag-button">edit tags</button></a>
+                <a href="categories.html"><button class="tag-button" data-translate="profile.button">edit tags</button></a>
             </div>
+
             <div id="profile-lower-page">
                 <hr>
-                <div id="language-section">
-                    <p class="element2">Language settings</p>
-
-                    <button class="language-button"> <img src="/assets/img/lang.png" height="20px" width="40px"></img>
-                    </button>
-                    <button class="language-button"><img src="/assets/img/nl-flag.jpg" height="20px"
-                            width="40px"></img></button>
-                </div>
-                <hr>
                 <div id="show-hide-profile">
-                    <p class="element2">Show me on corendon</p>
+                    <p class="element2" data-translate="profile.showCorendon">Show me on corendon</p>
                     <label class="switch">
                         <input type="checkbox">
                         <span class="slider round"></span>
                     </label>
                 </div>
                 <hr>
-
-                <button id="delete-profile">x permanently delete account</button>
+                <button id="delete-profile" data-translate="profile.deletePermanent">x permanently delete account</button>
             </div>
         </main>
     </div>
@@ -110,18 +101,20 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Kies een nieuwe avatar</label>
+                            <label data-translate="profile.selectAvatar">Kies een nieuwe avatar</label>
                             <input class="js-file" type="file" name="avatar">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            data-translate="profile.closeText">Sluit</button>
                         <button type="submit" class="btn btn-primary">Update avatar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
     <!-- Include: Chatbox -->
     <div class="js-element-builder" data-file="chatbox"></div>
 

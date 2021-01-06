@@ -85,17 +85,6 @@ a:hover {
     border-top:1px solid gray;
     opacity: .5;
 }
-
-/* LOCALIZATION */
-
-[data-translate] {
-    visibility: hidden;
-}
-
-[data-translate][translated] {
-    visibility: visible;
-}
-
 /* ADS */
 
 #adContainer {
@@ -430,13 +419,6 @@ a:hover {
     border-radius: 50%;
 }
 
-#profile-page #language-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
 #profile-page #delete-profile {
     color: #A01F05;
     background-color: Transparent;
@@ -452,14 +434,6 @@ a:hover {
     text-align: center;
 }
 
-#profile-page .language-button {
-    padding: 0;
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: none;
-    overflow: hidden;
-}
-
 #profile-page .profile-title {
     display: flex;
 }
@@ -473,6 +447,15 @@ a:hover {
     width: 100%;
 }
 
+/* Multi-Language */
+
+[data-translate] {
+    visibility: hidden;
+}
+
+[data-translate][translated] {
+    visibility: visible;
+}
 
 @media(max-width: 992px) {}
 
