@@ -111,6 +111,13 @@ $(document).ready(function () {
                 nl: "Potentiele travelbuddy",
                 en: "Potential travelbuddy"
             }
+        },
+
+        voorwaarden: {
+            algemeneVoorwaarden: {
+                nl: "Algemene Voorwaarden",
+                en: "Terms & Conditions"
+            }
         }
 
     };

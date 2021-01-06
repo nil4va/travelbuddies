@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @font-face {
     src: url('/assets/fonts/Uni\ Sans\ Heavy\ Italic.otf');
     font-family: "Uni Sans Italic";
@@ -77,14 +78,15 @@ a:hover {
     z-index: 999;
 }
 
-.h-divider{
-    margin-top:5px;
-    margin-bottom:5px;
-    height:1px;
-    width:100%;
-    border-top:1px solid gray;
+.h-divider {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 1px;
+    width: 100%;
+    border-top: 1px solid gray;
     opacity: .5;
 }
+
 /* ADS */
 
 #adContainer {
@@ -116,20 +118,20 @@ a:hover {
 }
 
 @keyframes pulse {
-	0% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-	}
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
 
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-	}
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
 
-	100% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-	}
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 
 #adContainer .circle-container {
@@ -146,7 +148,7 @@ a:hover {
     /* right: 150px; */
     position: absolute;
     top: 0;
-} 
+}
 
 #adContainer .two-circles {
     position: absolute;
@@ -261,6 +263,7 @@ a:hover {
 #log-in .carousel-control-prev-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
+
 #log-in .carousel-item {
     width: 100%;
     height: 32em;
@@ -501,7 +504,7 @@ a:hover {
 
 #matches .profile-overview-text-container h6 {
     align-self: flex-start;
-    font-size: 1em ;
+    font-size: 1em;
 }
 
 #matches .modal-header {
@@ -527,6 +530,7 @@ a:hover {
         margin-top: 50px;
     }
 }
+
 /* CHATBOX */
 
 #chatbox .container {
@@ -731,16 +735,16 @@ a:hover {
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
-  }
-  
-  #categories .button span {
+}
+
+#categories .button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
-  
-  #categories .button span:after {
+}
+
+#categories .button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -749,17 +753,25 @@ a:hover {
     right: 40px;
     left: -200px;
     transition: 0.5s;
-  }
-  
-  #categories .button:hover span:after {
+}
+
+#categories .button:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}
 
 @keyframes rotate {
-    0% {transform: rotate(-8deg);}
-    50% {transform: rotate(4deg);}
-    100% {transform: rotate(-8deg);}
+    0% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(4deg);
+    }
+
+    100% {
+        transform: rotate(-8deg);
+    }
 }
 
 #categories .logo-for-catagories {
@@ -785,6 +797,7 @@ a:hover {
     width: 45px;
     margin-top: 20px;
 }
+
 #categories .image-books {
     height: 50px;
     width: 50px;
@@ -816,41 +829,59 @@ a:hover {
 }
 
 #categories .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  #categories .modal-content {
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+#categories .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-  }
-  
-  #categories .close {
+}
+
+#categories .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  #categories .close:hover,
-  .close:focus {
+}
+
+#categories .close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  #explanationButton {
-      
-  }
+.footer {
+    background-color: #d81e05;
+    
+}
+
+.footer-link {
+    color: #fff;
+}
+
+.footer-link:hover {
+    color: #63231a;
+}
