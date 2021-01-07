@@ -10,7 +10,7 @@ function setCookie(name, value, days) {
     let currentDate = new Date();
     currentDate.setTime(currentDate.getTime() + (days * 24 * 60 * 60 * 1000));
     let expires = "expires=" + currentDate.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    document.cookie = name + "=" + value + ";" + expires + ";Secure;path=/";
 }
 
 function removeCookie(name) {
