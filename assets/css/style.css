@@ -209,6 +209,10 @@ a:hover {
     white-space: nowrap;
 }
 
+#log-in .container-1 .captcha-label {
+    margin-right: 10px;
+}
+
 #log-in .container-1 form p {
     padding-bottom: 20px;
 }
