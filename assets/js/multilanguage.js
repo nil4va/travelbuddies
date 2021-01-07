@@ -16,6 +16,15 @@ $(document).ready(function () {
         },
 
         profile: {
+            title: {
+                nl: "Profiel",
+                en: "Profile"
+            },
+
+            subTitle: {
+                nl: "Hier kun je, jouw profiel informatie aanpassen.",
+                en: "You can change your profile information here."
+            },
 
             headerProfile: {
                 nl: "Profiel",
@@ -64,6 +73,15 @@ $(document).ready(function () {
         },
 
         categories: {
+            title: {
+                nl: "Interesses (tags)",
+                en: "Interests (tags)"
+            },
+
+            subTitle: {
+                nl: "Voeg tags toe aan jouw profiel, en kom in aanraking met meer travelbuddies",
+                en: "Add tags to your profile and get in touch with more travel buddies"
+            },
 
             goBackBtn: {
                 nl: "Ga Terug",
@@ -107,6 +125,16 @@ $(document).ready(function () {
         },
 
         matches: {
+            title: {
+                nl: "Matches",
+                en: "Matches"
+            },
+
+            subTitle: {
+                nl: "Op deze pagina, vind je een overzicht van jouw matches.",
+                en: "On this page, you will find an overview of your matches."
+            },
+
             potentialTravelBuddy: {
                 nl: "Potentiele travelbuddy",
                 en: "Potential travelbuddy"
@@ -125,16 +153,20 @@ $(document).ready(function () {
     FYSCloud.Localization.setTranslations(translations);
 
     SESSION.then(function (sessionData) {
-        FYSCloud.Localization.switchLanguage(sessionData.user.language);
+        let lang = sessionData.user.language;
+        FYSCloud.Localization.switchLanguage(lang);
 
-        updateElementBuilderLanguage();
-
-        $("#localizationLanguageSwitch").on("change", () => {
+        $(document).on('change', '#localizationLanguageSwitch', () => {
+            // Updates language in database 
             FYSCloud.Localization.switchLanguage($("#localizationLanguageSwitch").val());
             FYSCloud.API.queryDatabase("UPDATE user SET language = ? WHERE id = ?",
                 [$("#localizationLanguageSwitch").val(), sessionData.user.id])
             updateElementBuilderLanguage();
-        })
+        });
+
+        // When language is selected. than language will say in selectbox
+        $(`#localizationLanguageSwitch option[value='${lang}']`).attr("selected", "selected");
+        updateElementBuilderLanguage();
+
     });
-    
 })
