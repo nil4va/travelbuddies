@@ -28,11 +28,12 @@
     <script src="/assets/js/session/enum/sessionEnum.js"></script>
     <script src="/assets/js/session/session.js"></script>
 
-    <script src="/assets/js/pages/profile.js"></script>
-
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/common.js"></script>
     <script src="/assets/js/elementBuilder.js"></script>
+
+    <script src="/assets/js/pages/matches.js"></script>
+    <script src="assets/js/pages/profile.js"></script>
     <script src="/assets/js/multilanguage.js"></script>
 </head>
 
@@ -72,8 +73,490 @@
                     <label for="biography" class="edit-field" data-translate="profile.editBio">✎ Edit biography</label>
                     <input type="text" id="biography" name="biography" class="form-control">
                 </form>
-                <a href="categories.html"><button class="tag-button" data-translate="profile.button">edit tags</button></a>
+
+                <a href="categories.html"><button class="tag-button">edit tags</button></a>
+
             </div>
+            <div id="profile-lower-page">
+                <hr>
+                <select name="country" id="nationality">
+                    <option value="" selected disabled hidden>Kies je nationaliteit !</option>
+                    <option value="AF">Afghanistan 🇦🇫</option>
+                    <option value="AO">Angola 🇦🇴</option>
+                    <option value="AL">Albania 🇦🇱</option>
+                    <option value="AD">Andorra 🇦🇩</option>
+                    <option value="AE">United Arab Emirates 🇦🇪</option>
+                    <option value="AR">Argentina 🇦🇷</option>
+                    <option value="AM">Armenia 🇦🇲</option>
+                    <option value="AG">Antigua and Barbuda 🇦🇬</option>
+                    <option value="AU">Australia 🇦🇺</option>
+                    <option value="AT">Austria 🇦🇹</option>
+                    <option value="AZ">Azerbaijan 🇦🇿</option>
+                    <option value="BI">Burundi 🇧🇮</option>
+                    <option value="BE">Belgium 🇧🇪</option>
+                    <option value="BJ">Benin 🇧🇯</option>
+                    <option value="BF">Burkina Faso 🇧🇫</option>
+                    <option value="BD">Bangladesh 🇧🇩</option>
+                    <option value="BG">Bulgaria 🇧🇬</option>
+                    <option value="BH">Bahrain 🇧🇭</option>
+                    <option value="BS">Bahamas 🇧🇸</option>
+                    <option value="BA">Bosnia and Herzegovina 🇧🇦</option>
+                    <option value="BY">Belarus 🇧🇾</option>
+                    <option value="BZ">Belize 🇧🇿</option>
+                    <option value="BO">Bolivia 🇧🇴</option>
+                    <option value="BR">Brazil 🇧🇷</option>
+                    <option value="BB">Barbados 🇧🇧</option>
+                    <option value="BN">Brunei 🇧🇳</option>
+                    <option value="BT">Bhutan 🇧🇹</option>
+                    <option value="BW">Botswana 🇧🇼</option>
+                    <option value="CF">Central African Republic 🇨🇫</option>
+                    <option value="CA">Canada 🇨🇦</option>
+                    <option value="CH">Switzerland 🇨🇭</option>
+                    <option value="CL">Chile 🇨🇱</option>
+                    <option value="CN">China 🇨🇳</option>
+                    <option value="CI">Ivory Coast 🇨🇮</option>
+                    <option value="CM">Cameroon 🇨🇲</option>
+                    <option value="CD">DR Congo 🇨🇩</option>
+                    <option value="CG">Republic of the Congo 🇨🇬</option>
+                    <option value="CO">Colombia 🇨🇴</option>
+                    <option value="KM">Comoros 🇰🇲</option>
+                    <option value="CV">Cape Verde 🇨🇻</option>
+                    <option value="CR">Costa Rica 🇨🇷</option>
+                    <option value="CU">Cuba 🇨🇺</option>
+                    <option value="CY">Cyprus 🇨🇾</option>
+                    <option value="CZ">Czechia 🇨🇿</option>
+                    <option value="DE">Germany 🇩🇪</option>
+                    <option value="DJ">Djibouti 🇩🇯</option>
+                    <option value="DM">Dominica 🇩🇲</option>
+                    <option value="DK">Denmark 🇩🇰</option>
+                    <option value="DO">Dominican Republic 🇩🇴</option>
+                    <option value="DZ">Algeria 🇩🇿</option>
+                    <option value="EC">Ecuador 🇪🇨</option>
+                    <option value="EG">Egypt 🇪🇬</option>
+                    <option value="ER">Eritrea 🇪🇷</option>
+                    <option value="ES">Spain 🇪🇸</option>
+                    <option value="EE">Estonia 🇪🇪</option>
+                    <option value="ET">Ethiopia 🇪🇹</option>
+                    <option value="FI">Finland 🇫🇮</option>
+                    <option value="FJ">Fiji 🇫🇯</option>
+                    <option value="FR">France 🇫🇷</option>
+                    <option value="FM">Micronesia 🇫🇲</option>
+                    <option value="GA">Gabon 🇬🇦</option>
+                    <option value="GB">United Kingdom 🇬🇧</option>
+                    <option value="GE">Georgia 🇬🇪</option>
+                    <option value="GH">Ghana 🇬🇭</option>
+                    <option value="GN">Guinea 🇬🇳</option>
+                    <option value="GM">Gambia 🇬🇲</option>
+                    <option value="GW">Guinea-Bissau 🇬🇼</option>
+                    <option value="GQ">Equatorial Guinea 🇬🇶</option>
+                    <option value="GR">Greece 🇬🇷</option>
+                    <option value="GD">Grenada 🇬🇩</option>
+                    <option value="GT">Guatemala 🇬🇹</option>
+                    <option value="GY">Guyana 🇬🇾</option>
+                    <option value="HN">Honduras 🇭🇳</option>
+                    <option value="HR">Croatia 🇭🇷</option>
+                    <option value="HT">Haiti 🇭🇹</option>
+                    <option value="HU">Hungary 🇭🇺</option>
+                    <option value="ID">Indonesia 🇮🇩</option>
+                    <option value="IN">India 🇮🇳</option>
+                    <option value="IE">Ireland 🇮🇪</option>
+                    <option value="IR">Iran 🇮🇷</option>
+                    <option value="IQ">Iraq 🇮🇶</option>
+                    <option value="IS">Iceland 🇮🇸</option>
+                    <option value="IL">Israel 🇮🇱</option>
+                    <option value="IT">Italy 🇮🇹</option>
+                    <option value="JM">Jamaica 🇯🇲</option>
+                    <option value="JO">Jordan 🇯🇴</option>
+                    <option value="JP">Japan 🇯🇵</option>
+                    <option value="KZ">Kazakhstan 🇰🇿</option>
+                    <option value="KE">Kenya 🇰🇪</option>
+                    <option value="KG">Kyrgyzstan 🇰🇬</option>
+                    <option value="KH">Cambodia 🇰🇭</option>
+                    <option value="KI">Kiribati 🇰🇮</option>
+                    <option value="KN">Saint Kitts and Nevis 🇰🇳</option>
+                    <option value="KR">South Korea 🇰🇷</option>
+                    <option value="KW">Kuwait 🇰🇼</option>
+                    <option value="LA">Laos 🇱🇦</option>
+                    <option value="LB">Lebanon 🇱🇧</option>
+                    <option value="LR">Liberia 🇱🇷</option>
+                    <option value="LY">Libya 🇱🇾</option>
+                    <option value="LC">Saint Lucia 🇱🇨</option>
+                    <option value="LI">Liechtenstein 🇱🇮</option>
+                    <option value="LK">Sri Lanka 🇱🇰</option>
+                    <option value="LS">Lesotho 🇱🇸</option>
+                    <option value="LT">Lithuania 🇱🇹</option>
+                    <option value="LU">Luxembourg 🇱🇺</option>
+                    <option value="LV">Latvia 🇱🇻</option>
+                    <option value="MA">Morocco 🇲🇦</option>
+                    <option value="MC">Monaco 🇲🇨</option>
+                    <option value="MD">Moldova 🇲🇩</option>
+                    <option value="MG">Madagascar 🇲🇬</option>
+                    <option value="MV">Maldives 🇲🇻</option>
+                    <option value="MX">Mexico 🇲🇽</option>
+                    <option value="MH">Marshall Islands 🇲🇭</option>
+                    <option value="MK">Macedonia 🇲🇰</option>
+                    <option value="ML">Mali 🇲🇱</option>
+                    <option value="MT">Malta 🇲🇹</option>
+                    <option value="MM">Myanmar 🇲🇲</option>
+                    <option value="ME">Montenegro 🇲🇪</option>
+                    <option value="MN">Mongolia 🇲🇳</option>
+                    <option value="MZ">Mozambique 🇲🇿</option>
+                    <option value="MR">Mauritania 🇲🇷</option>
+                    <option value="MU">Mauritius 🇲🇺</option>
+                    <option value="MW">Malawi 🇲🇼</option>
+                    <option value="MY">Malaysia 🇲🇾</option>
+                    <option value="NA">Namibia 🇳🇦</option>
+                    <option value="NE">Niger 🇳🇪</option>
+                    <option value="NG">Nigeria 🇳🇬</option>
+                    <option value="NI">Nicaragua 🇳🇮</option>
+                    <option value="NL">Netherlands 🇳🇱</option>
+                    <option value="NO">Norway 🇳🇴</option>
+                    <option value="NP">Nepal 🇳🇵</option>
+                    <option value="NR">Nauru 🇳🇷</option>
+                    <option value="NZ">New Zealand 🇳🇿</option>
+                    <option value="OM">Oman 🇴🇲</option>
+                    <option value="PK">Pakistan 🇵🇰</option>
+                    <option value="PA">Panama 🇵🇦</option>
+                    <option value="PE">Peru 🇵🇪</option>
+                    <option value="PH">Philippines 🇵🇭</option>
+                    <option value="PW">Palau 🇵🇼</option>
+                    <option value="PG">Papua New Guinea 🇵🇬</option>
+                    <option value="PL">Poland 🇵🇱</option>
+                    <option value="KP">North Korea 🇰🇵</option>
+                    <option value="PT">Portugal 🇵🇹</option>
+                    <option value="PY">Paraguay 🇵🇾</option>
+                    <option value="QA">Qatar 🇶🇦</option>
+                    <option value="RO">Romania 🇷🇴</option>
+                    <option value="RU">Russia 🇷🇺</option>
+                    <option value="RW">Rwanda 🇷🇼</option>
+                    <option value="SA">Saudi Arabia 🇸🇦</option>
+                    <option value="SD">Sudan 🇸🇩</option>
+                    <option value="SN">Senegal 🇸🇳</option>
+                    <option value="SG">Singapore 🇸🇬</option>
+                    <option value="SB">Solomon Islands 🇸🇧</option>
+                    <option value="SL">Sierra Leone 🇸🇱</option>
+                    <option value="SV">El Salvador 🇸🇻</option>
+                    <option value="SM">San Marino 🇸🇲</option>
+                    <option value="SO">Somalia 🇸🇴</option>
+                    <option value="RS">Serbia 🇷🇸</option>
+                    <option value="SS">South Sudan 🇸🇸</option>
+                    <option value="ST">São Tomé and Príncipe 🇸🇹</option>
+                    <option value="SR">Suriname 🇸🇷</option>
+                    <option value="SK">Slovakia 🇸🇰</option>
+                    <option value="SI">Slovenia 🇸🇮</option>
+                    <option value="SE">Sweden 🇸🇪</option>
+                    <option value="SZ">Swaziland 🇸🇿</option>
+                    <option value="SC">Seychelles 🇸🇨</option>
+                    <option value="SY">Syria 🇸🇾</option>
+                    <option value="TD">Chad 🇹🇩</option>
+                    <option value="TG">Togo 🇹🇬</option>
+                    <option value="TH">Thailand 🇹🇭</option>
+                    <option value="TJ">Tajikistan 🇹🇯</option>
+                    <option value="TM">Turkmenistan 🇹🇲</option>
+                    <option value="TL">Timor-Leste 🇹🇱</option>
+                    <option value="TO">Tonga 🇹🇴</option>
+                    <option value="TT">Trinidad and Tobago 🇹🇹</option>
+                    <option value="TN">Tunisia 🇹🇳</option>
+                    <option value="TR">Turkey 🇹🇷</option>
+                    <option value="TV">Tuvalu 🇹🇻</option>
+                    <option value="TZ">Tanzania 🇹🇿</option>
+                    <option value="UG">Uganda 🇺🇬</option>
+                    <option value="UA">Ukraine 🇺🇦</option>
+                    <option value="UY">Uruguay 🇺🇾</option>
+                    <option value="US">United States 🇺🇸</option>
+                    <option value="UZ">Uzbekistan 🇺🇿</option>
+                    <option value="VA">Vatican City 🇻🇦</option>
+                    <option value="VC">Saint Vincent and the Grenadines 🇻🇨</option>
+                    <option value="VE">Venezuela 🇻🇪</option>
+                    <option value="VN">Vietnam 🇻🇳</option>
+                    <option value="VU">Vanuatu 🇻🇺</option>
+                    <option value="WS">Samoa 🇼🇸</option>
+                    <option value="YE">Yemen 🇾🇪</option>
+                    <option value="ZA">South Africa 🇿🇦</option>
+                    <option value="ZM">Zambia 🇿🇲</option>
+                    <option value="ZW">Zimbabwe 🇿🇼</option>
+                </select>
+                <hr>
+                <input type="text" class="form-control searchbox searchboxCountries" placeholder="Zoek het land hier !">
+                <p>landen waar ik ben:</p>
+                <p class="explanationFlags">(sleep de vlag in het vak)</p>
+                <div class="boxForFlags boxForFlags1 empty">
+                    <p class="sticky">niet geweest</p>
+                    <div class="flag" id="boxForFlagsContent">
+                <button class="styleCountryButton" draggable="true"> 🇦🇨 Ascension Island</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇩 Andorra</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇪 United Arab Emirates</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇫 Afghanistan</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇬 Antigua & Barbuda</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇮 Anguilla</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇱 Albania</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇲 Armenia</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇴 Angola</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇶 Antarctica</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇷 Argentina</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇸 American Samoa</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇹 Austria</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇺 Australia</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇼 Aruba</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇽 Åland Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇦🇿 Azerbaijan</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇦 Bosnia & Herzegovina</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇧 Barbados</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇩 Bangladesh</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇪 Belgium</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇫 Burkina Faso</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇬 Bulgaria</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇭 Bahrain</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇮 Burundi</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇯 Benin</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇱 St. Barthélemy</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇲 Bermuda</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇳 Brunei</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇴 Bolivia</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇶 Caribbean Netherlands</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇷 Brazil</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇸 Bahamas</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇹 Bhutan</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇻 Bouvet Island</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇼 Botswana</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇾 Belarus</button>
+                <button class="styleCountryButton" draggable="true"> 🇧🇿 Belize</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇦 Canada</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇨 Cocos (Keeling) Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇩 Congo - Kinshasa</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇫 Central African Republic</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇬 Congo - Brazzaville</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇭 Switzerland</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇮 Côte d’Ivoire</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇰 Cook Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇱 Chile</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇲 Cameroon</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇳 China</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇴 Colombia</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇵 Clipperton Island</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇷 Costa Rica</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇺 Cuba</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇻 Cape Verde</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇼 Curaçao</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇽 Christmas Island</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇾 Cyprus</button>
+                <button class="styleCountryButton" draggable="true"> 🇨🇿 Czechia</button>
+                <button class="styleCountryButton" draggable="true"> 🇩🇪 Germany</button>
+                <button class="styleCountryButton" draggable="true"> 🇩🇬 Diego Garcia</button>
+                <button class="styleCountryButton" draggable="true"> 🇩🇯 Djibouti</button>
+                <button class="styleCountryButton" draggable="true"> 🇩🇰 Denmark</button>
+                <button class="styleCountryButton" draggable="true"> 🇩🇲 Dominica</button>
+                <button class="styleCountryButton" draggable="true"> 🇩🇴 Dominican Republic</button>
+                <button class="styleCountryButton" draggable="true"> 🇩🇿 Algeria</button>
+                <button class="styleCountryButton" draggable="true"> 🇪🇦 Ceuta & Melilla</button>
+                <button class="styleCountryButton" draggable="true"> 🇪🇨 Ecuador</button>
+                <button class="styleCountryButton" draggable="true"> 🇪🇪 Estonia</button>
+                <button class="styleCountryButton" draggable="true"> 🇪🇬 Egypt</button>
+                <button class="styleCountryButton" draggable="true"> 🇪🇭 Western Sahara</button>
+                <button class="styleCountryButton" draggable="true"> 🇪🇷 Eritrea</button>
+                <button class="styleCountryButton" draggable="true"> 🇪🇸 Spain</button>
+                <button class="styleCountryButton" draggable="true"> 🇪🇹 Ethiopia</button>
+                <button class="styleCountryButton" draggable="true"> 🇪🇺 European Union</button>
+                <button class="styleCountryButton" draggable="true"> 🇫🇮 Finland</button>
+                <button class="styleCountryButton" draggable="true"> 🇫🇯 Fiji</button>
+                <button class="styleCountryButton" draggable="true"> 🇫🇰 Falkland Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇫🇲 Micronesia</button>
+                <button class="styleCountryButton" draggable="true"> 🇫🇴 Faroe Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇫🇷 France</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇦 Gabon</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇧 United Kingdom</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇩 Grenada</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇪 Georgia</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇫 French Guiana</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇬 Guernsey</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇭 Ghana</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇮 Gibraltar</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇱 Greenland</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇲 Gambia</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇳 Guinea</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇵 Guadeloupe</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇶 Equatorial Guinea</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇷 Greece</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇸 South Georgia & South Sandwich Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇹 Guatemala</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇺 Guam</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇼 Guinea-Bissau</button>
+                <button class="styleCountryButton" draggable="true"> 🇬🇾 Guyana</button>
+                <button class="styleCountryButton" draggable="true"> 🇭🇰 Hong Kong SAR China</button>
+                <button class="styleCountryButton" draggable="true"> 🇭🇲 Heard & McDonald Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇭🇳 Honduras</button>
+                <button class="styleCountryButton" draggable="true"> 🇭🇷 Croatia</button>
+                <button class="styleCountryButton" draggable="true"> 🇭🇹 Haiti</button>
+                <button class="styleCountryButton" draggable="true"> 🇭🇺 Hungary</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇨 Canary Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇩 Indonesia</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇪 Ireland</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇱 Israel</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇲 Isle of Man</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇳 India</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇴 British Indian Ocean Territory</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇶 Iraq</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇷 Iran</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇸 Iceland</button>
+                <button class="styleCountryButton" draggable="true"> 🇮🇹 Italy</button>
+                <button class="styleCountryButton" draggable="true"> 🇯🇪 Jersey</button>
+                <button class="styleCountryButton" draggable="true"> 🇯🇲 Jamaica</button>
+                <button class="styleCountryButton" draggable="true"> 🇯🇴 Jordan</button>
+                <button class="styleCountryButton" draggable="true"> 🇯🇵 Japan</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇪 Kenya</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇬 Kyrgyzstan</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇭 Cambodia</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇮 Kiribati</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇲 Comoros</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇳 St. Kitts & Nevis</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇵 North Korea</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇷 South Korea</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇼 Kuwait</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇾 Cayman Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇰🇿 Kazakhstan</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇦 Laos</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇧 Lebanon</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇨 St. Lucia</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇮 Liechtenstein</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇰 Sri Lanka</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇷 Liberia</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇸 Lesotho</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇹 Lithuania</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇺 Luxembourg</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇻 Latvia</button>
+                <button class="styleCountryButton" draggable="true"> 🇱🇾 Libya</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇦 Morocco</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇨 Monaco</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇩 Moldova</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇪 Montenegro</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇫 St. Martin</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇬 Madagascar</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇭 Marshall Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇰 North Macedonia</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇱 Mali</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇲 Myanmar (Burma)</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇳 Mongolia</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇴 Macao Sar China</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇵 Northern Mariana Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇶 Martinique</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇷 Mauritania</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇸 Montserrat</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇹 Malta</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇺 Mauritius</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇻 Maldives</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇼 Malawi</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇽 Mexico</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇾 Malaysia</button>
+                <button class="styleCountryButton" draggable="true"> 🇲🇿 Mozambique</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇦 Namibia</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇨 New Caledonia</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇪 Niger</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇫 Norfolk Island</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇬 Nigeria</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇮 Nicaragua</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇱 Netherlands</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇴 Norway</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇵 Nepal</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇷 Nauru</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇺 Niue</button>
+                <button class="styleCountryButton" draggable="true"> 🇳🇿 New Zealand</button>
+                <button class="styleCountryButton" draggable="true"> 🇴🇲 Oman</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇦 Panama</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇪 Peru</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇫 French Polynesia</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇬 Papua New Guinea</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇭 Philippines</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇰 Pakistan</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇱 Poland</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇲 St. Pierre & Miquelon</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇳 Pitcairn Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇷 Puerto Rico</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇸 Palestinian Territories</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇹 Portugal</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇼 Palau</button>
+                <button class="styleCountryButton" draggable="true"> 🇵🇾 Paraguay</button>
+                <button class="styleCountryButton" draggable="true"> 🇶🇦 Qatar</button>
+                <button class="styleCountryButton" draggable="true"> 🇷🇪 Réunion</button>
+                <button class="styleCountryButton" draggable="true"> 🇷🇴 Romania</button>
+                <button class="styleCountryButton" draggable="true"> 🇷🇸 Serbia</button>
+                <button class="styleCountryButton" draggable="true"> 🇷🇺 Russia</button>
+                <button class="styleCountryButton" draggable="true"> 🇷🇼 Rwanda</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇦 Saudi Arabia</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇧 Solomon Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇨 Seychelles</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇩 Sudan</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇪 Sweden</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇬 Singapore</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇭 St. Helena</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇮 Slovenia</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇯 Svalbard & Jan Mayen</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇰 Slovakia</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇱 Sierra Leone</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇲 San Marino</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇳 Senegal</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇴 Somalia</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇷 Suriname</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇸 South Sudan</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇹 São Tomé & Príncipe</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇻 El Salvador</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇽 Sint Maarten</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇾 Syria</button>
+                <button class="styleCountryButton" draggable="true"> 🇸🇿 Eswatini</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇦 Tristan Da Cunha</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇨 Turks & Caicos Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇩 Chad</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇫 French Southern Territories</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇬 Togo</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇭 Thailand</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇯 Tajikistan</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇰 Tokelau</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇱 Timor-Leste</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇲 Turkmenistan</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇳 Tunisia</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇴 Tonga</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇷 Turkey</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇹 Trinidad & Tobago</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇻 Tuvalu</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇼 Taiwan</button>
+                <button class="styleCountryButton" draggable="true"> 🇹🇿 Tanzania</button>
+                <button class="styleCountryButton" draggable="true"> 🇺🇦 Ukraine</button>
+                <button class="styleCountryButton" draggable="true"> 🇺🇬 Uganda</button>
+                <button class="styleCountryButton" draggable="true"> 🇺🇲 U.S. Outlying Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇺🇳 United Nations</button>
+                <button class="styleCountryButton" draggable="true"> 🇺🇸 United States</button>
+                <button class="styleCountryButton" draggable="true"> 🇺🇾 Uruguay</button>
+                <button class="styleCountryButton" draggable="true"> 🇺🇿 Uzbekistan</button>
+                <button class="styleCountryButton" draggable="true"> 🇻🇦 Vatican City</button>
+                <button class="styleCountryButton" draggable="true"> 🇻🇨 St. Vincent & Grenadines</button>
+                <button class="styleCountryButton" draggable="true"> 🇻🇪 Venezuela</button>
+                <button class="styleCountryButton" draggable="true"> 🇻🇬 British Virgin Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇻🇮 U.S. Virgin Islands</button>
+                <button class="styleCountryButton" draggable="true"> 🇻🇳 Vietnam</button>
+                <button class="styleCountryButton" draggable="true"> 🇻🇺 Vanuatu</button>
+                <button class="styleCountryButton" draggable="true"> 🇼🇫 Wallis & Futuna</button>
+                <button class="styleCountryButton" draggable="true"> 🇼🇸 Samoa</button>
+                <button class="styleCountryButton" draggable="true"> 🇽🇰 Kosovo</button>
+                <button class="styleCountryButton" draggable="true"> 🇾🇪 Yemen</button>
+                <button class="styleCountryButton" draggable="true"> 🇾🇹 Mayotte</button>
+                <button class="styleCountryButton" draggable="true"> 🇿🇦 South Africa</button>
+                <button class="styleCountryButton" draggable="true"> 🇿🇲 Zambia</button>
+                <button class="styleCountryButton" draggable="true"> 🇿🇼 Zimbabwe</button>
+                <button class="styleCountryButton" draggable="true"> 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</button>
+                <button class="styleCountryButton" draggable="true"> 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</button>
+                <button class="styleCountryButton" draggable="true"> 🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wales</button>
+                </div>
+                </div>
+
+                <div class="boxForFlags empty">
+                    <p class="sticky">geweest</p>
+                    <div id="boxForFlagsContent"></div>
+                </div>
+
+                <div class="boxForFlags empty">
+                    <p class="sticky">wil gaan</p>
+                    <div id="boxForFlagsContent empty"></div>
+                </div>
+
 
             <div id="profile-lower-page">
                 <hr>
@@ -124,40 +607,6 @@
     <!-- Include: Chatbox -->
     <div class="js-element-builder" data-file="chatbox"></div>
 
-    <script>
-        $(document).ready(async () => {
-            let userId = (await SESSION).user.id;
-
-            let user = (await FYSCloud.API.queryDatabase(
-                "SELECT * FROM `user` WHERE `id` = " + userId
-            ))[0];
-
-            function calculateAge(birthday) { // birthday is a date
-                var ageDifMs = Date.now() - birthday;
-                var ageDate = new Date(ageDifMs); // miliseconds from epoch
-                return Math.abs(ageDate.getUTCFullYear() - 1970);
-            }
-
-            let leeftijd = calculateAge(new Date(user.birthDate));
-
-            $("#profile-name-and-age").text(user.name + " (" + leeftijd + ")");
-
-            $("#birthday").val(user.birthDate.split("T")[0]);
-            $("#occupation").val(user.occupation);
-            $("#biography").val(user.biography);
-
-            $("input").focusout(async e => {
-                let birthday = $("#birthday").val() || new Date().toDateString();
-                let occupation = $("#occupation").val();
-                let biography = $("#biography").val();
-
-                await FYSCloud.API.queryDatabase(
-                    "UPDATE `user` SET `birthDate`='" + birthday + "', `occupation`='" +
-                    occupation + "',`biography`='" + biography + "' WHERE `id` = " + userId
-                );
-            });
-        });
-    </script>
 </body>
 
 </html>

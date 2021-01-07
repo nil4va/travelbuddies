@@ -16,6 +16,10 @@ class SessionUser {
         return this.id;
     }
 
+    getId() {
+        return this.id;
+    }
+
     getName() {
         return this.name;
     }

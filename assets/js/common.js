@@ -25,3 +25,7 @@ function updateNavbarUser() {
         }
     });
 }
+
+function goBack() {
+    window.history.back();
+}

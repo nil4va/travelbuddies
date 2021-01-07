@@ -304,6 +304,11 @@ a:hover {
 
 /* PROFILE PAGE */
 
+#profile-page .explanationFlags {
+    font-size: 10px;
+    margin: 0;
+}
+
 #profile-page .avatar {
     height: 200px;
     border-radius: 50%;
@@ -342,7 +347,7 @@ a:hover {
 }
 
 #profile-page .tag-button {
-    margin-left: 30px;
+    margin: 0 20px 0 20px;
     background-color: #D81E05;
     padding: 25px;
     font-weight: bold;
@@ -446,10 +451,70 @@ a:hover {
     margin-left: 20px;
 }
 
-#profile #modalWindow {
-    width: 100%;
+#profile-page select {
+    text-align-last: center;
 }
 
+#profile-page .edit-field {
+    margin-top: 20px;
+}
+
+#profile-page #biography {
+    height: 100px;
+}
+
+#profile-page .boxForFlags {
+    border: solid 1px black;
+    text-align: center;
+    display: inline-block;
+    width: 220px;
+    height: 200px;
+    padding: 10px;
+    margin: 0 0 20px 0;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+#profile-page .hold {
+    border: solid 5px #ccc;
+}
+
+#profile-page .empty {
+    border: solid 1px black;
+    display: inline-block;
+    height: 160px;
+    width: 160px;
+    margin: 10px;
+    overflow-y: scroll;
+}
+
+#profile-page .hovered {
+    border-style: dashed;
+}
+
+#profile-page .sticky {
+    width:100%;
+    z-index:10;
+    background:inherit;
+    position: sticky;
+    top: 0;
+    border-bottom: thin;
+    background-color: lightgrey;
+}
+
+#profile-page .searchboxCountries {
+    width: 200px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#profile-page .styleCountryButton {
+    display: inline-block;
+    background-color: transparent;
+    border: thin;
+}
 /* Multi-Language */
 
 [data-translate] {
@@ -515,6 +580,10 @@ a:hover {
 #matches .profile-overview-btn {
     color: #fff;
     background-color: #28a745;
+}
+
+#matches #compareTags {
+    font-size: 12px;
 }
 
 @media (min-width: 576px) {
@@ -873,9 +942,14 @@ a:hover {
     cursor: pointer;
 }
 
+/*LOG OUT BUTTON*/
+.logOutButton {
+    background-color: #D81E05;
+    border-radius: 10px;
+    color: #FFF !important;
+}
 .footer {
     background-color: #d81e05;
-    
 }
 
 .footer-link {
