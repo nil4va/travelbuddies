@@ -36,7 +36,9 @@ $(document).ready(function () {
             setCookie(SessionEnum.SESSION_COOKIE_NAME, sessionToken, 7);
 
             // Redirect to matches
-            window.location.replace('/matches.html');
+            setTimeout(function(){ 
+                window.location.replace('/matches.html');
+            }, 500);
         });
     });
 });
