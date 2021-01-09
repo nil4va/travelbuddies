@@ -2,8 +2,50 @@ $(function () {
   $(document).ready(async () => {
     let userId = (await SESSION).user.id;
     let user = (await FYSCloud.API.queryDatabase(
-      "SELECT * FROM `user` WHERE `id` = " + userId
+      "SELECT * FROM `user` WHERE `id` = ?",
+      [userId]
     ))[0];
+
+    $("#pictureUploader").on('change', () => {
+      FYSCloud.Utils.getDataUrl($("#pictureUploader"))
+        .done(data => {
+          FYSCloud.API.uploadFile(
+            userId + "-" + Date.now() + ".png",
+            data.url
+          ).done(async data => {
+            await FYSCloud.API.queryDatabase(
+              "INSERT INTO `user_profile_image` (userId, pictureUrl) VALUES (?, ?);",
+              [userId, data]
+            );
+            location.reload();
+          }).fail(reason => {
+            console.log(reason);
+          });
+        }).fail(reason => {
+          console.log(reason);
+        });
+    });
+
+    let pictures = await FYSCloud.API.queryDatabase(
+      "SELECT * FROM `user_profile_image` WHERE `userId` = ?",
+      [userId]
+    );
+
+    for (let { pictureUrl } of pictures) {
+      let avatarElement = $('<img>')
+        .attr('src', pictureUrl)
+        .addClass('profile-picture-img')
+  
+      $("#profileImages").find("input").after(avatarElement);
+    }
+
+    $("#profileImages img").click(async e => {
+      await FYSCloud.API.queryDatabase(
+        "DELETE FROM `user_profile_image` WHERE `pictureUrl` = ?",
+        [$(e.currentTarget).attr("src")]
+      );
+      location.reload();
+    });
 
     function calculateAge(birthdate) {
       var ageDifMs = Date.now() - birthdate;
