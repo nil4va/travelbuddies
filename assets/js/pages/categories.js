@@ -35,6 +35,10 @@ for (i = 0; i < coll.length; i++) {
 }
 
 $(document).ready(function () {
+    SESSION.then(function(data) {
+        $(".name-of-user").text(data.user.name)
+    })    
+
     $(".searchbox").on("keyup", function () {
         var value = $(this).val().toLowerCase();
         $(this).parent().parent().find('.tag-button').filter(function () {

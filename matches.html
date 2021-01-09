@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-md-10" id="match_potential">
                 <h3 class="pb-3 mb-4 font-italic border-bottom text-center"
-                    data-translate="matches.potentialTravelBuddy">
+                    data-translate="matches.potentialTravelBuddy" data-translate="matches.potential">
                     Potentiele travelbuddy
                 </h3>
 
@@ -60,25 +60,43 @@
             </div>
 
             <div class="col-md-2 text-center" id="matches_approved">
-                <h3 class="pb-3 mb-4 font-italic border-bottom">
+                <h3 class="pb-3 mb-4 font-italic border-bottom" data-translate="matches.matches">
                     Matches
                 </h3>
-
-                <div class="card mb-3" data-toggle="modal" data-target="#modalWindow">
-                    <img class="card-img-top" src="assets/img/profile/girl.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                    </div>
-                </div>
-                <div class="card mb-3" data-toggle="modal" data-target="#modalWindow">
-                    <img class="card-img-top" src="assets/img/profile/girl.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                    </div>
-                </div>
             </div>
     </main>
 
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title js-profile-modal-name" id="exampleModalLongTitle">John Doe</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="" class="profile-overview-image js-profile-modal-avatar">
+                            </div>
+                            <div class="col-md-6 profile-overview-text-container text-black">
+                                <h5 class="text-left js-profile-modal-name"></h5>
+                                <p id="biographyInProfile" class="js-profile-modal-bio"></p>
+                                <span class="h-divider">
+                                <p class="mt-4"><b>Mail:</b> <span class="js-profile-modal-mail"></span></p>
+                                <p><b>Tel:</b> <span class="js-profile-modal-phone"></span></p>
+                                <p><b data-translate="matches.nationality">:</b>: <span class="js-profile-modal-nationality"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Include: footer -->
     <div class="js-element-builder" data-file="footer"></div>
+
 </html>
