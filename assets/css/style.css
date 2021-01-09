@@ -261,6 +261,10 @@ a:hover {
     box-shadow: inset 0 0 0 2em #fff;
 }
 
+#log-in .black-link {
+    color: #000;
+}
+
 
 #log-in .container-2 {
     background-image: url('../img/background-1.jpg');
