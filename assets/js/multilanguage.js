@@ -32,8 +32,8 @@ $(document).ready(function () {
             },
 
             button: {
-                nl: "Wijzig tag",
-                en: "Edit tag"
+                nl: "Wijzig tags",
+                en: "Edit tags"
             },
 
             selectAvatar: {
@@ -59,6 +59,36 @@ $(document).ready(function () {
             editBio: {
                 nl: "✎ Wijzig biografie",
                 en: "✎ Edit biography"
+            },
+
+            countriesVisited: {
+                nl: "Landen waar ik ben:",
+                en: "Countries I have:"
+            },
+
+            dragCountry: {
+                nl: "(sleep de vlag in het vak)",
+                en: "(drag flag to box)"
+            },
+
+            notVisited: {
+                nl: "niet geweest",
+                en: "not visited"
+            },
+
+            visited: {
+                nl: "geweest",
+                en: "been to"
+            },
+
+            mustVisited: {
+                nl: "wil gaan",
+                en: "must visit"
+            },
+
+            save: {
+                nl:"Opslaan",
+                en:"Save"
             },
 
             showCorendon: {
