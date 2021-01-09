@@ -56,6 +56,11 @@ $(document).ready(function () {
                 en: "✎ Edit function"
             },
 
+            editPhoneNumber: {
+                nl: "✎ Wijzig telefoonnummer",
+                en: "✎ Edit phone number"
+            },
+
             editBio: {
                 nl: "✎ Wijzig biografie",
                 en: "✎ Edit biography"

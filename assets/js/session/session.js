@@ -26,6 +26,7 @@ const SESSION = new Promise(function (resolve, reject) {
                 firstResult.id,
                 firstResult.firstName,
                 firstResult.lastName,
+                firstResult.phoneNumber,
                 firstResult.birthDate,
                 firstResult.name,
                 firstResult.email,

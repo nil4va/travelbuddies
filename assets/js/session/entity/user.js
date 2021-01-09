@@ -1,8 +1,9 @@
 class SessionUser {
-    constructor(id, firstName, lastName, birthDate, name, email, profilePictureUrl, passwordResetToken, admin, language) {
+    constructor(id, firstName, lastName, phoneNumber, birthDate, name, email, profilePictureUrl, passwordResetToken, admin, language) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
         this.birthDate = birthDate;
         this.name = name;
         this.email = email;
@@ -90,5 +91,13 @@ class SessionUser {
 
     setLanguage(language) {
         this.language = language;
+    }
+
+    getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    setPhoneNumber(phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

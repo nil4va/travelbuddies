@@ -17,6 +17,7 @@ $(document).ready(function () {
         let email = $(this).find('.js-email').val();
         // Security? Hashing? Salting? We don't know what that is.
         let password = $(this).find('.js-password').val();
+        let phoneNumber = $(this).find('.js-phoneNumber').val();
         let birthDate = $(this).find('.js-birthdate').val();
 
         userRepository.getFirstByEmail(email).then(result => {
@@ -37,6 +38,7 @@ $(document).ready(function () {
                     username,
                     email,
                     password,
+                    phoneNumber,
                     birthDate
                 );
                 // Redirect to the login page.
