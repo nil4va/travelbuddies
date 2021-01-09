@@ -145,7 +145,7 @@ $(document).ready(async () => {
             .attr('data-name', otherUser.firstName + ' ' + otherUser.lastName)
             .attr('data-avatar', otherUser.profilePictureUrl)
             .attr('data-mail', otherUser.email)
-            .attr('data-phone', otherUser.phone)
+            .attr('data-phone', otherUser.phoneNumber)
             .attr('data-bio', otherUser.biography)
             .attr('data-nationality', otherUser.nationality)
             .append(
@@ -266,7 +266,7 @@ $(document).ready(async () => {
                 .attr('data-name', matchUser.firstName + ' ' + matchUser.lastName)
                 .attr('data-avatar', matchUser.profilePictureUrl)
                 .attr('data-mail', matchUser.email)
-                .attr('data-phone', matchUser.phone)
+                .attr('data-phone', matchUser.phoneNumber)
                 .attr('data-bio', matchUser.biography)
                 .attr('data-nationality', matchUser.nationality)
                 .append($('<img>')
