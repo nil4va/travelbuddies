@@ -39,6 +39,10 @@ a:hover {
     background-color: #d81e05;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .chatbox-frame {
     display: none;
     height: calc(100% - 3em);
