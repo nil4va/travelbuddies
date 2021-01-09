@@ -177,6 +177,16 @@ $(document).ready(function () {
         },
 
         voorwaarden: {
+            title: {
+                nl: "Algeme Voorwaarden",
+                en: "Terms & Conditions"
+            },
+
+            subTitle: {
+                nl: "Hier wordt de algemene voorwaarden weergegeven.",
+                en: "Here are the terms & coniditions"
+            },
+
             algemeneVoorwaarden: {
                 nl: "Algemene Voorwaarden",
                 en: "Terms & Conditions"
