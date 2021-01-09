@@ -4,11 +4,13 @@ SESSION.then(function(data) {
 
 $(document).ready(async () => {
 let userId = (await SESSION).user.id;
+
 let totalTagsOfUser = (
     await FYSCloud.API.queryDatabase(
      "SELECT COUNT(*) AS totaal FROM `user_tag` WHERE `userId`= ?",
     [userId]))
     
     $("#totalTags").text(totalTagsOfUser[0].totaal);
+
 });
 

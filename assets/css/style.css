@@ -311,9 +311,8 @@ a:hover {
 }
 
 /* PROFILE PAGE */
-
 #profile-page .explanationFlags {
-    font-size: 10px;
+    font-size: 11px;
     margin: 0;
 }
 
@@ -323,27 +322,29 @@ a:hover {
     cursor: pointer;
 }
 
-#profile-page #profile-upper-page {
-    flex: 1;
-    background-color: #D81E05;
+#profile-page #flexboxForProfilePage {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    background-color: #D81E05;
+}
+
+#profile-page #profile-upper-page {
     text-align: center;
     color: #060608;
-    margin-bottom: 20px;
+    background-color: #D81E05;
+    border-radius: 20px;
 }
 
 #profile-page #profile-mid-page {
     color: #000000;
-    flex: 1;
     background-color: #fff;
-    display: flex;
     font-weight: 1px;
     justify-content: center;
-    align-items: center;
     text-align: center;
+    background-color: #D81E05;
+    border-radius: 20px;
 }
 
 #profile-page .element1 {
@@ -355,9 +356,9 @@ a:hover {
 }
 
 #profile-page .tag-button {
-    margin: 0 20px 0 20px;
-    background-color: #D81E05;
-    padding: 25px;
+    margin: 10px 0 10px 0;
+    background-color: #FF0000;
+    padding: 19px;
     font-weight: bold;
     border: none;
     color: #fff;
@@ -461,14 +462,12 @@ a:hover {
 
 #profile-page select {
     text-align-last: center;
+    background-color: #D81E05;
+    color: #FFF;
 }
 
 #profile-page .edit-field {
     margin-top: 20px;
-}
-
-#profile-page #biography {
-    height: 100px;
 }
 
 #profile-page .boxForFlags {
@@ -488,7 +487,7 @@ a:hover {
 }
 
 #profile-page .empty {
-    border: solid 1px black;
+    border: solid 1px #D81E05;
     display: inline-block;
     height: 160px;
     width: 160px;
@@ -507,7 +506,8 @@ a:hover {
     position: sticky;
     top: 0;
     border-bottom: thin;
-    background-color: lightgrey;
+    background-color: #D81E05;
+    color: #FFF;
 }
 
 #profile-page .searchboxCountries {
@@ -516,6 +516,7 @@ a:hover {
     width: 50%;
     margin: auto;
     margin-bottom: 10px;
+    color: #D81E05;
 }
 
 #profile-page .styleCountryButton {
@@ -523,6 +524,16 @@ a:hover {
     background-color: transparent;
     border: thin;
 }
+
+#profile-page #saveButton {
+    background-color: #D81E05;
+    color: #FFFFFF;
+    border: transparent;
+    padding: 10px;
+    align-items: center;
+    position: relative;
+}
+
 /* Multi-Language */
 
 [data-translate] {
@@ -537,8 +548,21 @@ a:hover {
 
 @media(max-width: 768px) {
 
+    #profile-page .avatar {
+        height: 150px;
+    }
+
+    #profile-page #profile-mid-page {
+        width: 150px;
+    }
+        
+    #profile-page #profile-name-and-age {
+        font-size: 15px;
+    }
+
     #profile-page {
         flex-direction: column;
+        justify-content: space-evenly;
     }
 }
 

@@ -74,12 +74,12 @@
 
             <div class="col-md-4">
                 <button id="explanationButton" class="btn btn-danger mt-5"
-                    data-translate="categories.explenationBtn">klik voor uitleg</button>
+                    data-translate="categories.explenationBtn" data-target="#explanationModal" data-toggle="modal">klik voor uitleg</button>
             </div>
 
-            <div id="myModal" class="modal">
+            <div id="explanationModal" class="modal" data-backdrop="false">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
+                    <span data-dismiss="modal" class="close">&times;</span>
                     <h1 data-translate="categories.modalExplenationHeading" class="text-center">
                         Wat zijn Tags ?
                     </h1>
