@@ -38,6 +38,9 @@
 </head>
 
 <body>
+    <!-- Include: Notifications -->
+    <div class="js-element-builder" data-file="notifications"></div>
+
     <!-- Include: Header -->
     <div class="js-element-builder" data-file="header"></div>
     <div class="js-element-builder-text" data-file="header" data-name="title" data-translate="profile.title"></div>
@@ -49,35 +52,44 @@
             <!-- Include: Ad -->
             <div class="js-element-builder" data-file="ad"></div>
             <div id="flexboxForProfilePage">
-            <div id="profile-upper-page">
-                <div id="whole-profile-page" data-toggle="modal" data-target="#avatarUpload">
-                    <div class="profile-title">
-                        <p><h1 id="gear1">⚙</h1>
-                        <h1>⚙</h1>klik profielfoto om te wijzigen</p>
-                    </div>
+                <div id="profile-upper-page">
+                    <div id="whole-profile-page" data-toggle="modal" data-target="#avatarUpload">
+                        <div class="profile-title">
+                            <p>
+                            <h1 id="gear1">⚙</h1>
+                            <h1>⚙</h1>klik profielfoto om te wijzigen</p>
+                        </div>
 
-                    <img src="assets/img/profile-female.jpg" data-toggle="modal" data-target="#avatarUpload"
-                        class="avatar">
-                    <h2 id="profile-name-and-age"></h2>
+                        <img src="assets/img/profile-female.jpg" data-toggle="modal" data-target="#avatarUpload"
+                            class="avatar">
+                        <h2 id="profile-name-and-age"></h2>
+                    </div>
+                </div>
+
+                <div id="profile-mid-page">
+                    <form action="">
+                        <label for="birthday" data-translate="profile.editBirthday">✎ Edit birthday</label>
+                        <input type='date' id='birthday' class="form-control">
+
+                        <label for="occupation" data-translate="profile.editFunction">✎ Edit occupation</label>
+                        <input type="text" id="occupation" name="occupation" class="form-control">
+
+                        <label for="biography" class="edit-field" data-translate="profile.editBio">✎ Edit
+                            biography</label>
+                        <input type="text" id="biography" name="biography" class="form-control">
+                    </form>
+
+                    <a href="categories.html"><button class="tag-button" data-translate="profile.button">edit
+                            tags</button></a>
+
                 </div>
             </div>
 
-            <div id="profile-mid-page">
-                <form action="">
-                    <label for="birthday" data-translate="profile.editBirthday">✎ Edit birthday</label>
-                    <input type='date' id='date' class="form-control" />
-
-                    <label for="function" data-translate="profile.editFunction">✎ Edit function</label>
-                    <input type="text" id="function" name="function" class="form-control">
-
-                    <label for="biography" class="edit-field" data-translate="profile.editBio">✎ Edit biography</label>
-                    <input type="text" id="biography" name="biography" class="form-control">
-                </form>
-
-                <a href="categories.html"><button class="tag-button" data-translate="profile.button">edit tags</button></a>
-
+            <hr>
+            <div id="profileImages">
+                <label data-translate="profile.editPics">✎ Edit foto's</label>
+                <input type="file" id="pictureUploader" style="display: block; margin-bottom: 10px;" />
             </div>
-        </div>
 
             <div id="profile-lower-page">
                 <hr>
@@ -297,18 +309,19 @@
 
                 <button id="saveButton" data-translate="profile.save">opslaan</button>
 
-            <div id="profile-lower-page">
-                <hr>
-                <div id="show-hide-profile">
-                    <p class="element2" data-translate="profile.showCorendon">Show me on corendon</p>
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
+                <div id="profile-lower-page">
+                    <hr>
+                    <div id="show-hide-profile">
+                        <p class="element2" data-translate="profile.showCorendon">Show me on corendon</p>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <hr>
+                    <button id="delete-profile" data-translate="profile.deletePermanent">x permanently delete
+                        account</button>
                 </div>
-                <hr>
-                <button id="delete-profile" data-translate="profile.deletePermanent">x permanently delete account</button>
-            </div>
         </main>
     </div>
 
@@ -342,9 +355,6 @@
 
     <!-- Include: footer -->
     <div class="js-element-builder" data-file="footer"></div>
-
-    <!-- Include: Chatbox -->
-    <div class="js-element-builder" data-file="chatbox"></div>
 
 </body>
 

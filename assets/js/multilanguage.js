@@ -99,6 +99,11 @@ $(document).ready(function () {
             deletePermanent: {
                 nl: "x permanent account verwijderen",
                 en: "x permanently delete account"
+            },
+
+            editPics: {
+                nl: "Bewerk foto's",
+                en: "Modify pictures"
             }
         },
 

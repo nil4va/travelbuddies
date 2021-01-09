@@ -39,6 +39,17 @@ a:hover {
     background-color: #d81e05;
 }
 
+.bg-gray {
+    background-color: #f4f4f4;
+}
+
+.profile-picture-img {
+    height: 180px;
+    width: 180px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }

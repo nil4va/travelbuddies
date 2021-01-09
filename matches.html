@@ -35,10 +35,14 @@
 </head>
 
 <body id="matches">
+    <!-- Include: Notifications -->
+    <div class="js-element-builder" data-file="notifications"></div>
+
     <!-- Include: Header -->
     <div class="js-element-builder" data-file="header"></div>
     <div class="js-element-builder-text" data-file="header" data-name="title" data-translate="matches.title"></div>
-    <div class="js-element-builder-text" data-file="header" data-name="subTitle" data-translate="matches.subTitle"></div>
+    <div class="js-element-builder-text" data-file="header" data-name="subTitle" data-translate="matches.subTitle">
+    </div>
 
     <!-- Main content -->
 
@@ -46,8 +50,9 @@
         <!-- Include: Ad -->
         <div class="js-element-builder" data-file="ad"></div>
         <div class="row">
-            <div class="col-md-10">
-                <h3 class="pb-3 mb-4 font-italic border-bottom text-center" data-translate="matches.potentialTravelBuddy">
+            <div class="col-md-10" id="match_potential">
+                <h3 class="pb-3 mb-4 font-italic border-bottom text-center"
+                    data-translate="matches.potentialTravelBuddy">
                     Potentiele travelbuddy
                 </h3>
 
@@ -71,232 +76,9 @@
                         <h5 class="card-title">John Doe</h5>
                     </div>
                 </div>
-
-                <!-- MODAL WINDOW -->
-                <div class="modal fade" id="modalWindow" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">John Doe</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/profile-female.jpg" class="profile-overview-image">
-                                    </div>
-                                    <div class="col-md-6 profile-overview-text-container">
-                                        <p id="compareTags"><span id="sameTags"></span> van de <span id="totalTags"></span> tags komen overeen met:</p>
-                                        <h5 class="text-left">John Doe</h5>
-                                        <h6 class="text-left">Over mij</h6>
-                                        <p id="biographyInProfile" class="text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur saepe voluptate debitis</p>
-                                        <span class="h-divider">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-succes profile-overview-btn">Chat met
-                                        mij!</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
     </main>
 
     <!-- Include: footer -->
     <div class="js-element-builder" data-file="footer"></div>
-
-    <!-- Include: Chatbox -->
-    <div class="js-element-builder" data-file="chatbox"></div>
-
-    <script>
-        $(document).ready(async () => {
-            let userId = (await SESSION).user.id;
-            let otherUserId = -1;
-
-            let matchIds = [];
-
-            let matches_potential = [];
-
-            // Stackoverflow
-            function calculateAge(birthday) {
-                var ageDifMs = Date.now() - birthday;
-                var ageDate = new Date(ageDifMs);
-
-                return Math.abs(ageDate.getUTCFullYear() - 1970);
-            }
-
-            async function resetPage() {
-                $("#match_potential .card-potential-buddy").detach();
-                $("#matches_approved .card.mb-3").detach();
-            }
-
-            async function updateMatches() {
-                let otherUserAcceptedMatches = await FYSCloud.API.queryDatabase(
-                    "SELECT * FROM `user_match` WHERE `userId` = " + userId + " AND `otherUserAccepted` = 1;"
-                );
-
-                let ourUserAcceptedMatches = await FYSCloud.API.queryDatabase(
-                    "SELECT * FROM `user_match` WHERE `otherUserId` = " + userId + " AND `otherUserAccepted` = 1;"
-                );
-
-                matchIds = ourUserAcceptedMatches.concat(otherUserAcceptedMatches);
-
-                matchIds = Array.from(
-                    new Set(
-                        matchIds.reduce((matchIds, match) => {
-                            if (match.userId == userId) {
-                                matchIds.push(match.otherUserId);
-                            } else {
-                                matchIds.push(match.userId);
-                            }
-
-                            return matchIds;
-                        }, [])
-                    )
-                );
-
-                renderMatches();
-
-                let otherUserDeclinedMatches = await FYSCloud.API.queryDatabase(
-                    "SELECT * FROM `user_match` WHERE `userId` = " + userId + " AND `otherUserDeclined` = 1;"
-                );
-
-                let ourUserDeclinedMatches = await FYSCloud.API.queryDatabase(
-                    "SELECT * FROM `user_match` WHERE `otherUserId` = " + userId + " AND `otherUserDeclined` = 1;"
-                );
-
-                let declinedIds = ourUserDeclinedMatches.concat(otherUserDeclinedMatches);
-
-                declinedIds = Array.from(
-                    new Set(
-                        declinedIds.reduce((matchIds, match) => {
-                            if (match.userId == userId) {
-                                matchIds.push(match.otherUserId);
-                            } else {
-                                matchIds.push(match.userId);
-                            }
-
-                            return matchIds;
-                        }, [])
-                    )
-                );
-
-                let excludeIds = matchIds.concat(declinedIds);
-
-                let excludeValues = [];
-
-                for (let excludeId of excludeIds) {
-                    excludeValues.push("`userId` != " + excludeId);
-                }
-
-                let tag_category_score = (await FYSCloud.API.queryDatabase(
-                    "SELECT * FROM `tag_category_score` WHERE `userId` = " + userId + ";"
-                ))[0];
-
-                matches_potential = Array.from(
-                    await FYSCloud.API.queryDatabase(
-                        "SELECT * FROM `tag_category_score`" + (excludeValues.length ? " WHERE " + excludeValues.join("AND") + " " : "") + "ORDER BY ABS(hobbys - " + tag_category_score.hobbys + "), ABS(movies - " + tag_category_score.movies + "), ABS(countries - " + tag_category_score.countries + "), ABS(books - " + tag_category_score.books + "), ABS(music - " + tag_category_score.music + "), ABS(games - " + tag_category_score.games + "), ABS(sports - " + tag_category_score.sports + "), ABS(languages - " + tag_category_score.languages + ");"
-                    )
-                );
-
-                otherUserId = matches_potential.length > 0 ? matches_potential[0].userId : -1;
-            }
-
-            async function renderPotentialMatch() {
-                if (otherUserId === -1) {
-                    return;
-                }
-
-                let otherUser = (await FYSCloud.API.queryDatabase(
-                    "SELECT * FROM `user` WHERE `id` = " + matches_potential[0].userId + ";"
-                ))[0];
-
-                let leeftijd = calculateAge(new Date(otherUser.birthDate));
-
-                let el = '';
-                
-                el += '<div class="card card-potential-buddy">';
-                el += '<div class="card mb-3" data-toggle="modal" data-target="#modalWindow">';
-                el += '<img class="card-img-top" src="assets/img/profile/girl.jpg" alt="Card image cap">';
-                el += '<div class="card-body">';
-                el += '<h5 class="card-title">' + otherUser.firstName + " (" + leeftijd + ")" + '</h5>';
-                el += '<p class="card-text">' + otherUser.biography + '</p>';
-                el += '<div class="row">';
-                el += '<div class="col-md-6">';
-                el += '<a class="btn btn-success btn-block">Interesse</a>';
-                el += '</div>';
-                el += '<div class="col-md-6">';
-                el += '<a class="btn btn-danger btn-block">Geen interesse</a>';
-                el += '</div>';
-                el += '</div>';
-                el += '</div>';
-                el += '</div>';
-                el += '</div>';
-
-                $("#match_potential h3").after(el);
-            }
-
-            async function renderMatches() {
-                for (let matchId of matchIds) {
-                    let matchUser = (await FYSCloud.API.queryDatabase(
-                        "SELECT * FROM `user` WHERE `id` = " + matchId + ";"
-                    ))[0];
-
-                    let el = "";
-
-                    let leeftijd = calculateAge(new Date(matchUser.birthDate));
-                    let match_naam_en_leeftijd = matchUser.firstName + " (" + leeftijd + ")";
-
-                    el += '<div class="card mb-3">';
-                    el += '<img class="card-img-top" src="assets/img/profile/girl.jpg" alt="Card image cap">';
-                    el += '<div class="card-body">';
-                    el += '<h5 class="card-title">' + match_naam_en_leeftijd + '</h5>';
-                    el += '</div>';
-                    el += '</div>';
-
-                    $("#matches_approved").find("h3").after(el);
-                }
-            }
-
-            async function updateMatchState(approved) {
-                let match_exists = await FYSCloud.API.queryDatabase(
-                    "SELECT * FROM `user_match` WHERE `userId` = " + otherUserId + " AND `otherUserId` = " + userId + ";"
-                );
-
-                if (match_exists.length > 0) {
-                    await FYSCloud.API.queryDatabase(
-                        "UPDATE `user_match` SET `otherUserAccepted` = " + Number(approved) + ", `otherUserDeclined` = " + Number(!approved) + " WHERE `userId` = " + otherUserId + " AND `otherUserId` = " + userId + ";"
-                    );
-                } else {
-                    await FYSCloud.API.queryDatabase(
-                        "INSERT INTO `user_match` (userId, otherUserId, otherUserAccepted, otherUserDeclined) VALUES (" + userId + ", " + otherUserId + ", false, " + (!approved) + ");"
-                    );
-                }
-            }
-
-            async function update() {
-                await resetPage();
-                await updateMatches();
-                await renderPotentialMatch();
-            }
-
-            $("body").on("click", "a.btn", async e => {
-                let approved = $(e.currentTarget).hasClass("btn-success");
-                await updateMatchState(approved);
-
-                await update();
-            });
-
-            await update();
-        });
-    </script>
-</body>
-
 </html>
