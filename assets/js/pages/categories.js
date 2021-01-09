@@ -36,8 +36,14 @@ for (i = 0; i < coll.length; i++) {
 
 $(document).ready(function () {
     SESSION.then(function(data) {
-        $(".name-of-user").text(data.user.name)
-    })    
+        $(".name-of-user").text(data.user.name);
+
+        let avatarUrl = data.user.profilePictureUrl;
+        if (avatarUrl === null) {
+            avatarUrl = '/assets/img/profile-female.jpg';
+        }
+        $(".js-avatar").attr('src', avatarUrl);
+    })
 
     $(".searchbox").on("keyup", function () {
         var value = $(this).val().toLowerCase();
