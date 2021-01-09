@@ -109,6 +109,26 @@ $(document).ready(function () {
             editPics: {
                 nl: "Bewerk foto's",
                 en: "Modify pictures"
+            },
+
+            modalTitle: {
+                nl: "Account permanent verwijderen",
+                en: "Permanent delete account"
+            },
+
+            modalSubTitle: {
+                nl: "Weet je zeker dat je je account wilt verwijderen?",
+                en: "Are you sure to permanently delete your account?"
+            },
+            
+            modalConfirmBtn: {
+                nl: "Ja",
+                en: "Yes"
+            },
+
+            modalDenyBtn: {
+                nl: "Nee",
+                en: "No"
             }
         },
 
