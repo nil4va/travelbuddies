@@ -164,13 +164,27 @@ $(document).ready(function () {
                 nl: "Matches",
                 en: "Matches"
             },
-
             subTitle: {
                 nl: "Op deze pagina, vind je een overzicht van jouw matches.",
                 en: "On this page, you will find an overview of your matches."
             },
 
             potentialTravelBuddy: {
+                nl: "Potentiele travelbuddy",
+                en: "Potential travelbuddy"
+            },
+
+            nationality: {
+                nl: "Nationaliteit",
+                en: "Nationality"
+            },
+
+            matches: {
+                nl: "Matches",
+                en: "Matches"
+            },
+
+            potential: {
                 nl: "Potentiele travelbuddy",
                 en: "Potential travelbuddy"
             }

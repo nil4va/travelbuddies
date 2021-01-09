@@ -141,6 +141,13 @@ $(document).ready(async () => {
         let avatarElement = $('<div>')
             .addClass('card')
             .addClass('card-potential-buddy')
+            .addClass('js-profile-modal')
+            .attr('data-name', otherUser.firstName + ' ' + otherUser.lastName)
+            .attr('data-avatar', otherUser.profilePictureUrl)
+            .attr('data-mail', otherUser.email)
+            .attr('data-phone', otherUser.phone)
+            .attr('data-bio', otherUser.biography)
+            .attr('data-nationality', otherUser.nationality)
             .append(
                 $('<div>')
                     .addClass('card')
@@ -195,6 +202,48 @@ $(document).ready(async () => {
         $("#match_potential h3").after(avatarElement);
     }
 
+    $(document).on('click', '.js-profile-modal', (event) => {
+        let avatarElement = $(event.currentTarget);
+
+        let mail = avatarElement.data('mail');
+        let avatar = avatarElement.data('avatar');
+        let name = avatarElement.data('name');
+        let phone = avatarElement.data('phone');
+        let bio = avatarElement.data('bio');
+        let nationality = avatarElement.data('nationality');
+
+        if (mail === undefined) {
+            mail = '';
+        }
+        if (avatar === undefined) {
+            avatar = '/assets/img/profile-female.jpg';
+        }
+        if (name === undefined) {
+            name = '';
+        }
+        if (phone === undefined) {
+            phone = '';
+        }
+        if (avatar === undefined) {
+            avatar = '';
+        }        
+        if (bio === undefined) {
+            bio = '';
+        }        
+        if (nationality === undefined) {
+            nationality = '';
+        }
+
+        $('.js-profile-modal-mail').text(mail);
+        $('.js-profile-modal-avatar').attr('src', avatar);
+        $('.js-profile-modal-name').text(name);
+        $('.js-profile-modal-phone').text(phone);
+        $('.js-profile-modal-bio').text(bio);
+        $('.js-profile-modal-nationality').text(nationality);
+
+        $('#profileModal').modal('toggle');
+    });
+
     async function renderMatches() {
         for (let matchId of matchIds) {
             let matchUser = (await FYSCloud.API.queryDatabase(
@@ -213,6 +262,13 @@ $(document).ready(async () => {
             let avatarElement = $('<div>')
                 .addClass('card')
                 .addClass('mb-3')
+                .addClass('js-profile-modal')
+                .attr('data-name', matchUser.firstName + ' ' + matchUser.lastName)
+                .attr('data-avatar', matchUser.profilePictureUrl)
+                .attr('data-mail', matchUser.email)
+                .attr('data-phone', matchUser.phone)
+                .attr('data-bio', matchUser.biography)
+                .attr('data-nationality', matchUser.nationality)
                 .append($('<img>')
                     .addClass('card-img-top')
                     .attr('src', avatarUrl)
