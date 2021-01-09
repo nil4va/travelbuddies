@@ -35,7 +35,7 @@ $(function () {
       let avatarElement = $('<img>')
         .attr('src', pictureUrl)
         .addClass('profile-picture-img')
-  
+
       $("#profileImages").find("input").after(avatarElement);
     }
 
@@ -71,13 +71,15 @@ $(function () {
       let biography = $("#biography").val();
       let nationality = $("#nationality").val();
 
-      await FYSCloud.API.queryDatabase(
-
-        "UPDATE user SET birthDate = ?, occupation = ?, phoneNumber = ?, biography = ?, nationality = ? WHERE id = ?", [birthday, occupation, phoneNumber, biography, nationality, userId]);
+      FYSCloud.API.queryDatabase(
+        "UPDATE user SET birthDate = ?, occupation = ?, phoneNumber = ?, biography = ?, nationality = ? WHERE id = ?",
+        [birthday, occupation, phoneNumber, biography, nationality, userId]
+      ).done(function () {
+        alert("Profiel instellingen zijn veranderd.");
+      });
     }
 
     $("select").change(opslaan);
-
   });
 
   $(document).ready(function () {
