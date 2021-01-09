@@ -31,10 +31,10 @@ class UserRepository {
         return await result;
     }
 
-    async createUser(firstName, lastName, username, email, password, BirthDate) {
+    async createUser(firstName, lastName, username, email, password, phoneNumber, birthDate) {
         FYSCloud.API.queryDatabase(
-            "INSERT INTO `user` (`id`, `firstName`, `lastName`, `name`, `email`, `password`, `birthDate`) VALUES (NULL, ?, ?, ?, ?, ?, ?)",
-            [firstName, lastName, username, email, password, BirthDate]
+            "INSERT INTO `user` (`id`, `firstName`, `lastName`, `name`, `email`, `password`, `phoneNumber`, `birthDate`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)",
+            [firstName, lastName, username, email, password, phoneNumber, birthDate]
         );
     }
 

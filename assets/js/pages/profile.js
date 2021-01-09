@@ -18,18 +18,20 @@ $(function () {
     $("#birthday").val(user.birthDate.split("T")[0]);
     $("#occupation").val(user.occupation);
     $("#biography").val(user.biography);
+    $("#phoneNumber").val(user.phoneNumber);
     $("#nationality").val(user.nationality);
 
     $("input").focusout(opslaan);
     async function opslaan() {
       let birthday = $("#birthday").val() || new Date().toDateString();
       let occupation = $("#occupation").val();
+      let phoneNumber = $("#phoneNumber").val();
       let biography = $("#biography").val();
       let nationality = $("#nationality").val();
 
       await FYSCloud.API.queryDatabase(
 
-        "UPDATE user SET birthDate = ?, occupation = ?, biography = ?, nationality = ? WHERE id = ?", [birthday, occupation, biography, nationality, userId]);
+        "UPDATE user SET birthDate = ?, occupation = ?, phoneNumber = ?, biography = ?, nationality = ? WHERE id = ?", [birthday, occupation, phoneNumber, biography, nationality, userId]);
     }
 
     $("select").change(opslaan);
