@@ -83,6 +83,17 @@ $(function () {
   $(document).ready(async () => {
     let userId = (await SESSION).user.id;
 
+    $('.js-permanent-delete-btn').on('click', function () {
+      FYSCloud.API.queryDatabase(
+        "DELETE FROM `user` WHERE `id` = ?",
+        [userId]
+      ).then(function () {
+        window.location.replace('/');
+      }).fail(function (reason) {
+        console.log(reason)
+      })
+    });
+
     let used_flags = FYSCloud.API.queryDatabase(
       "SELECT uf.userId, af.flagId, uf.visited, af.flagName FROM all_flags af LEFT JOIN used_flags uf ON uf.flagId = af.flagId AND uf.userId = ?",
       [userId]
@@ -128,14 +139,14 @@ $(function () {
       }
 
       FYSCloud.API.queryDatabase(
-          "DELETE FROM used_flags WHERE userID = ?",
-          [userId]
-        )
+        "DELETE FROM used_flags WHERE userID = ?",
+        [userId]
+      )
         .done(function () {
           FYSCloud.API.queryDatabase(
-              "INSERT INTO used_flags(userId, flagId, visited) VALUES ?",
-              [usedflags]
-            )
+            "INSERT INTO used_flags(userId, flagId, visited) VALUES ?",
+            [usedflags]
+          )
             .done(function () {
               alert("Opslaan is gelukt!");
             });
