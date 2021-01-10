@@ -8,7 +8,12 @@ $(function () {
       [userId]
     ))[0];
 
-    updateAvatar(user.profilePictureUrl);
+    let avatarUrl = user.profilePictureUrl;
+    if (avatarUrl === null) {
+      avatarUrl = '/assets/img/profile/girl.jpg';
+    }
+
+    updateAvatar(avatarUrl);
 
     $(document).on('submit', '#profile-image-form', function (event) {
       event.preventDefault();
