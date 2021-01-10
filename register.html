@@ -36,38 +36,43 @@
 
 <body>
     <div id="log-in">
-        <div class="container-1">
-            <h3>Register To Meet <br> New Travel Buddies!</h3>
+        <div class="container-1 container d-flex flex-column align-items-center justify-content-center col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <h3>Register To Meet <br> New Travel Buddies!</h3>
 
-            <form id="register-form" action="#">
-                <div class="form-group">
-                    <label for="firstname">Enter Name<br></label>
-                    <input type="text" id="firstname" class="form-control js-first-name" name="firstName" required>
+                <form id="register-form" action="#">
+                    <div class="form-group">
+                        <label for="firstname">Enter Name<br></label>
+                        <input type="text" id="firstname" class="form-control js-first-name" name="firstName" required>
 
-                    <label for="lastname">Enter Last Name<br></label>
-                    <input type="text" id="lastname" class="form-control js-last-name" name="lastname" required>
+                        <label for="lastname">Enter Last Name<br></label>
+                        <input type="text" id="lastname" class="form-control js-last-name" name="lastname" required>
 
-                    <label for="username">Enter Username<br></label>
-                    <input type="text" id="username" class="form-control js-username" name="username" required>
+                        <label for="username">Enter Username<br></label>
+                        <input type="text" id="username" class="form-control js-username" name="username" required>
 
-                    <label for="email">Enter E-mail<br></label>
-                    <input type="email" id="email" class="form-control js-email" name="email" required>
+                        <label for="email">Enter E-mail<br></label>
+                        <input type="email" id="email" class="form-control js-email" name="email" required>
 
-                    <label for="phonenumber">Enter Phone number<br></label>
-                    <input type="number" id="phoneNumber" class="form-control js-phoneNumber" name="phoneNumber" required>
+                        <label for="phonenumber">Enter Phone number<br></label>
+                        <input type="number" id="phoneNumber" class="form-control js-phoneNumber" name="phoneNumber"
+                            required>
 
-                    <label for="birthdate">Enter Birthdate<br></label>
-                    <input type="date" id="birthdate" class="form-control js-birthdate" name="birthdate" required>
+                        <label for="birthdate">Enter Birthdate<br></label>
+                        <input type="date" id="birthdate" class="form-control js-birthdate" name="birthdate" required>
 
-                    <label for="password">Enter Password<br></label>
-                    <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" title="At least one letter, one uppercase, one special, and at least 8 characters." id="password" class="form-control js-password" name="password" required>
-                </div>
+                        <label for="password">Enter Password<br></label>
+                        <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                            title="At least one letter, one uppercase, one special, and at least 8 characters."
+                            id="password" class="form-control js-password" name="password" required>
+                    </div>
+            </div>
 
-                <div class="cta-container">
-                    <input type="submit" value="Sign Up" class="cta">
-                </div>
+            <div class="cta-container">
+                <input type="submit" value="Sign Up" class="cta">
+            </div>
 
-                <p>Already have an account? <a href="login.html" class="black-link">Log in</a></p>
+            <p>Already have an account? <a href="index.html" class="black-link">Log in</a></p>
             </form>
         </div>
 
