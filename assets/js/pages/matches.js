@@ -141,13 +141,6 @@ $(document).ready(async () => {
         let avatarElement = $('<div>')
             .addClass('card')
             .addClass('card-potential-buddy')
-            .addClass('js-profile-modal')
-            .attr('data-name', otherUser.firstName + ' ' + otherUser.lastName)
-            .attr('data-avatar', otherUser.profilePictureUrl)
-            .attr('data-mail', otherUser.email)
-            .attr('data-phone', otherUser.phoneNumber)
-            .attr('data-bio', otherUser.biography)
-            .attr('data-nationality', otherUser.nationality)
             .append(
                 $('<div>')
                     .addClass('card')
