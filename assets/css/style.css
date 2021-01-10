@@ -102,6 +102,12 @@ a:hover {
     opacity: .5;
 }
 
+.notification-subtitle,
+.notification-title,
+.notification-btn {
+    visibility: visible !important;
+}
+
 /* ADS */
 
 #adContainer {
@@ -623,6 +629,11 @@ a:hover {
 #matches .profile-overview-btn {
     color: #fff;
     background-color: #28a745;
+}
+
+#matches .btn-success, 
+#matches .btn-danger {
+    visibility: visible;
 }
 
 #matches #compareTags {

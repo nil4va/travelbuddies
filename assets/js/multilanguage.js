@@ -3,6 +3,18 @@ $(document).ready(function () {
 
         // All translations
 
+        notification: {
+            subTitle: {
+                nl: "Andere gebruikers zijn geinteresseerd. Klik om naar matches te gaan!",
+                en: "Other users are intressted. Click here to go to your matches!"
+            },
+
+            btn: {
+                nl: "Meer details...",
+                en: "More details..."
+            }
+        },
+
         header: {
             itemProfile: {
                 nl: "Profiel",
@@ -64,6 +76,11 @@ $(document).ready(function () {
             editBio: {
                 nl: "✎ Wijzig biografie",
                 en: "✎ Edit biography"
+            },
+
+            chooseNationality: {
+                nl: "Kies je nationaliteit!",
+                en: "Choose your nationality!"
             },
 
             countriesVisited: {
@@ -207,6 +224,16 @@ $(document).ready(function () {
             matches: {
                 nl: "Matches",
                 en: "Matches"
+            },
+
+            successBtn: {
+                nl: "Interesse",
+                en: "Interest"
+            },
+            
+            dangerBtn: {
+                nl: "Geen interesse",
+                en: "No interest"
             },
 
             potential: {

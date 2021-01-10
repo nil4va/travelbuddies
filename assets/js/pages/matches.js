@@ -183,6 +183,7 @@ $(document).ready(async () => {
                                             .addClass('btn-success')
                                             .addClass('btn-block')
                                             .text('Interesse')
+                                            .attr('data-translate', 'matches.successBtn')
                                     )
                             )
                             .append(
@@ -194,6 +195,7 @@ $(document).ready(async () => {
                                             .addClass('btn-danger')
                                             .addClass('btn-block')
                                             .text('Geen Interesse')
+                                            .attr('data-translate', 'matches.dangerBtn')
                                     )
                             )
                     )
@@ -226,10 +228,10 @@ $(document).ready(async () => {
         }
         if (avatar === undefined) {
             avatar = '';
-        }        
+        }
         if (bio === undefined) {
             bio = '';
-        }        
+        }
         if (nationality === undefined) {
             nationality = '';
         }
