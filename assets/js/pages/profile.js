@@ -236,7 +236,7 @@ $(function () {
             [usedflags]
           )
             .done(function () {
-              alert("Opslaan is gelukt!");
+              alert("Opslaan is van de landen is gelukt!");
             });
         });
     });
