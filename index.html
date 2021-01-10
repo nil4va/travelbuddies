@@ -34,37 +34,38 @@
 
 <body>
     <div id="log-in">
-        <div class="container-1">
+        <div class="container-1 container d-flex align-items-center justify-content-center col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <h3>Login To Meet <br> New Travel Buddies!</h3>
 
-            <h3>Login To Meet <br> New Travel Buddies!</h3>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email">Enter e-mail<br></label>
+                        <input type="email" id="fname" class="form-control js-email" name="email" required>
 
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="email">Enter e-mail<br></label>
-                    <input type="email" id="fname" class="form-control js-email" name="email" required>
+                        <label for="password">Enter Password<br></label>
+                        <input type="password" id="fpassword" class="form-control js-password" name="password" required>
 
-                    <label for="password">Enter Password<br></label>
-                    <input type="password" id="fpassword" class="form-control js-password" name="password" required>
+                        <label class="captcha-label">
+                            <span id="num1">1</span> + <span id="num2">2</span>
+                        </label>
+                        <input type="tel" id="captchaInputVal" class="form-control col-4 col-sm-2">
+                    </div>
 
-                    <label class="captcha-label">
-                    <span id="num1">1</span> + <span id="num2">2</span>
-                    </label>
-                    <input type="tel" id="captchaInputVal" class="form-control col-4 col-sm-2">
-                </div>
+                    <div class="cta-container">
+                        <input type="submit" value="Log In" class="cta">
+                    </div>
 
-                <div class="cta-container">
-                    <input type="submit" value="Log In" class="cta">
-                </div>
+                    <p>
+                        Don't have an account? <a href="register.html" class="black-link">Sign Up</a></br>
+                        Forgot your password? <a href="forgot.html" class="black-link">Reset it</a>
+                    </p>
 
-                <p>
-                    Don't have an account? <a href="register.html" class="black-link">Sign Up</a></br>
-                    Forgot your password? <a href="forgot.html" class="black-link">Reset it</a>
-                </p>
-
-            </form>
+                </form>
+            </div>
         </div>
 
-        <div class="container-2">
+        <div class="container-2 container col-lg-6 col-md-6 col-sm-12 col-12">
             <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">

@@ -36,23 +36,24 @@
 <body>
     <div id="log-in">
         <div class="container-1">
+            <div class="row">
+                <h3>Reset password</h3>
 
-            <h3>Reset password</h3>
+                <form id="reset-form">
+                    <div class="form-group">
+                        <label for="reset-token">Reset token<br></label>
+                        <input type="text" id="reset-token" class="form-control js-reset-token" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter new password<br></label>
+                        <input type="password" id="password" class="form-control js-password" name="password" required>
+                    </div>
 
-            <form id="reset-form">
-                <div class="form-group">
-                    <label for="reset-token">Reset token<br></label>
-                    <input type="text" id="reset-token" class="form-control js-reset-token" readonly>
-                </div>        
-                <div class="form-group">
-                    <label for="password">Enter new password<br></label>
-                    <input type="password" id="password" class="form-control js-password" name="password" required>
-                </div>
-
-                <div class="cta-container">
-                    <input type="submit" value="Update password" class="cta">
-                </div>
-            </form>
+                    <div class="cta-container">
+                        <input type="submit" value="Update password" class="cta">
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div class="container-2">
@@ -92,4 +93,5 @@
         </div>
     </div>
 </body>
+
 </html>
