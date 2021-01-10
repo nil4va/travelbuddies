@@ -239,6 +239,16 @@ $(document).ready(function () {
             potential: {
                 nl: "Potentiele travelbuddy",
                 en: "Potential travelbuddy"
+            },
+
+            noMatchTitle: {
+                nl: "Geen potentiele match :(",
+                en: "No potential match :("
+            },
+
+            noMatchMessage: {
+                nl: "Je vind iedereen zo interessant dat ze rechts staan in plaats van hier :)",
+                en: "You matched with every user we can throw at you, look to your right :)"
             }
         },
 
@@ -278,6 +288,9 @@ $(document).ready(function () {
         // When language is selected. than language will say in selectbox
         $(`#localizationLanguageSwitch option[value='${lang}']`).attr("selected", "selected");
         updateElementBuilderLanguage();
-
     });
 })
+
+function updateTranslations() {
+    FYSCloud.Localization.translate();
+}
