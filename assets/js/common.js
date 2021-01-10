@@ -16,9 +16,10 @@ function updateNavbarUser() {
 
         if (user.admin === 1) {
             usernameElement.append(
-                $('<span>')
+                $('<a>')
                     .text(' (admin)')
                     .addClass('text-danger')
+                    .attr('href', '/admin.html')
             )
         }
 
