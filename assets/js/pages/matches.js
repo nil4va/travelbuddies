@@ -346,4 +346,28 @@ $(document).ready(async () => {
     });
 
     await update();
+
+    let used_flags = FYSCloud.API.queryDatabase(
+        "SELECT uf.userId, af.flagId, uf.visited, af.flagName FROM all_flags af LEFT JOIN used_flags uf ON uf.flagId = af.flagId AND uf.userId = ?",
+        [userId]
+      )
+  
+  
+      used_flags.done(function (data) {
+        for (i = 0; i < data.length; i++) {
+          let currentFlag = data[i];
+          let flagNameCorrector = decodeURI(currentFlag.flagName).replaceAll('+', ' ');
+          let button = $('<button class="styleCountryButton" data-id="' + currentFlag.flagId + '">' + flagNameCorrector + '</button>');
+          if (currentFlag.visited == true) {
+            $("#appendVisited").append(button)
+          } else if (currentFlag.visited == false) {
+            $("#appendMustVisit").append(button)
+          }
+        }
+        const fill = document.querySelectorAll('.fill');
+        for (let i = 0; i < fill.length; i++) {
+          fill[i].addEventListener('dragstart', dragStart);
+        }
+      });
+
 });
