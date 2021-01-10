@@ -58,4 +58,18 @@ class UserRepository {
             [null, password, passwordResetToken]
         );
     }
+
+    async deleteById(id) {
+        FYSCloud.API.queryDatabase(
+            "DELETE FROM `user` WHERE id = ?",
+            [id]
+        );
+    }
+
+    async getAll() {
+        let result = FYSCloud.API.queryDatabase(
+            "SELECT * FROM `user`"
+        );
+        return await result;
+    }
 }

@@ -267,6 +267,38 @@ $(document).ready(function () {
                 nl: "Algemene Voorwaarden",
                 en: "Terms & Conditions"
             }
+        },
+
+        admin: {
+            title: {
+                nl: "Admin gebruiker beheer",
+                en: "Admin user manager"
+            },
+
+            subTitle: {
+                nl: "Hier kun je gebruikers verwijderen",
+                en: "Here you can remove users from the system"
+            },
+
+            id: {
+                nl: "Id",
+                en: "Id",
+            },
+
+            name: {
+                nl: "Naam",
+                en: "Name",
+            },
+
+            options: {
+                nl: "Opties",
+                en: "Options",
+            },
+
+            delete: {
+                nl: "Verwijder",
+                en: "Delete",
+            }
         }
 
     };
