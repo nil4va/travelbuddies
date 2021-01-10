@@ -55,6 +55,7 @@
                     data-translate="matches.potentialTravelBuddy" data-translate="matches.potential">
                     Potentiele travelbuddy
                 </h3>
+                <p data-translate="matches.youSeeEarlier" class="sentenceOrderOfBuddies">je ziet travelbuddies eerder die het meest interesses hebben in dezelfde categorie waar jij ook al je interesses in hebt! </p>
 
                 <!-- LOAD POTENTIAL MATCH -->
             </div>
@@ -71,6 +72,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title js-profile-modal-name" id="exampleModalLongTitle">John Doe</h5>
+                    <p class="matchedTags"><span id="compareTags"></span>&nbsp&nbsp xx van jouw&nbsp<span id="totalTags">
+                    </span>&nbspinteresses met&nbsp<span class="js-profile-modal-name"></span>&nbspkomen overeen</p>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -88,7 +91,9 @@
                                 <p class="mt-4"><b>Mail:</b> <span class="js-profile-modal-mail"></span></p>
                                 <p><b>Tel:</b> <span class="js-profile-modal-phone"></span></p>
                                 <p><b data-translate="matches.nationality">:</b>: <span class="js-profile-modal-nationality"></span></p>
-                                <p><span id="compareTags"></span> van jouw <span id="totalTags"></span> interesses met <span class="js-profile-modal-name"></span> komen overeen</p>
+                                <p>landen waar <span class="js-profile-modal-name"></span> is geweest</p>
+                                <div id="appendVisited">geweest: </div>
+                                <div id="appendMustVisit">wil gaan: </div>
                             </div>
                         </div>
                     </div>

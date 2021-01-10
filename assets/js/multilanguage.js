@@ -109,8 +109,8 @@ $(document).ready(function () {
             },
 
             save: {
-                nl:"Opslaan",
-                en:"Save"
+                nl: "Sla de bezochte & te bezoeken landen op !",
+                en: "Save the visited & must visited countries !"
             },
 
             showCorendon: {
@@ -241,6 +241,10 @@ $(document).ready(function () {
                 en: "Potential travelbuddy"
             },
 
+            youSeeEarlier: {
+                nl: "travelbuddies die de meeste interesse gemeen heeft in een categorie met jou     worden hier eerder getoont! ",
+                en: "travelbuddies who have the most common interests as you in a catagorie show up earlier!"},
+
             noMatchTitle: {
                 nl: "Geen potentiele match :(",
                 en: "No potential match :("
@@ -249,6 +253,7 @@ $(document).ready(function () {
             noMatchMessage: {
                 nl: "Je vind iedereen zo interessant dat ze rechts staan in plaats van hier :)",
                 en: "You matched with every user we can throw at you, look to your right :)"
+
             }
         },
 

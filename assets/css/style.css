@@ -585,6 +585,11 @@ a:hover {
 
 /* Matches */
 
+.matchedTags {
+    font-size: 12px;
+    text-align: left;
+}
+
 #matches .card-potential-buddy {
     width: 400px;
     margin: 0 auto;
@@ -607,6 +612,11 @@ a:hover {
 #matches .profile-overview-text-container {
     margin: 0;
     padding: 0;
+}
+
+#matches .sentenceOrderOfBuddies {
+    font-size: 9px;
+    text-align: center;
 }
 
 #matches .profile-overview-text-container h5 {
