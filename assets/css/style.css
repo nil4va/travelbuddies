@@ -603,20 +603,20 @@ a:hover {
 }
 
 #matches .profile-overview-text-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 #matches .profile-overview-text-container h5 {
     font-size: 2em;
     align-self: flex-start;
+    margin-top: 120px;
 }
 
 #matches .profile-overview-text-container h6 {
     align-self: flex-start;
     font-size: 1em;
+    margin: 0 auto;
 }
 
 #matches .modal-header {
@@ -631,14 +631,6 @@ a:hover {
 
 #matches #compareTags {
     font-size: 12px;
-}
-
-@media (min-width: 576px) {
-    #matches .modal-dialog {
-        max-width: 70%;
-        display: flex;
-        position: relative;
-    }
 }
 
 @media(max-width: 768px) {
