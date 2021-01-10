@@ -1,10 +1,54 @@
 $(function () {
   $(document).ready(async () => {
+    let userRepository = new UserRepository;
+
     let userId = (await SESSION).user.id;
     let user = (await FYSCloud.API.queryDatabase(
       "SELECT * FROM `user` WHERE `id` = ?",
       [userId]
     ))[0];
+
+    updateAvatar(user.profilePictureUrl);
+
+    $(document).on('submit', '#profile-image-form', function (event) {
+      event.preventDefault();
+      let file = $(this).find('.js-file');
+      let fileExtension = file.val().split('.').pop().toLowerCase();
+      let allowedExtensions = ['jpeg', 'jpg', 'png'];
+      if ($.inArray(fileExtension, allowedExtensions) === -1) {
+        alert('The extension is not allowed, please upload one of the following: ' + allowedExtensions.join(', '));
+        return;
+      }
+
+      let fileLocation = '/storage/usercontent/' + userId + '/' + generateRandomString() + '.' + fileExtension;
+      FYSCloud.Utils
+        .getDataUrl(file)
+        .done(function (data) {
+          FYSCloud.API.uploadFile(
+            fileLocation,
+            data.url
+          ).done(function (url) {
+            userRepository.updateProfilePictureUrl(userId, url);
+            updateAvatar(url);
+            // Remove modal
+            $("#avatarUpload").modal('hide');
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+          }).catch(reason => {
+            if (reason === SessionEnum.ERROR_NOT_LOGGED_IN) {
+              window.location.replace('/');
+            }
+          });
+        });
+    });
+
+    function updateAvatar(avatarUrl) {
+      if (avatarUrl === '') {
+        return;
+      }
+      let avatar = $('.js-avatar');
+      avatar.attr('src', avatarUrl);
+    }
 
     $("#pictureUploader").on('change', () => {
       FYSCloud.Utils.getDataUrl($("#pictureUploader"))
@@ -63,7 +107,7 @@ $(function () {
     $("#phoneNumber").val(user.phoneNumber);
     $("#nationality").val(user.nationality);
 
-    $("input").focusout(opslaan);
+    $(".js-profile-details input").focusout(opslaan);
     async function opslaan() {
       let birthday = $("#birthday").val() || new Date().toDateString();
       let occupation = $("#occupation").val();

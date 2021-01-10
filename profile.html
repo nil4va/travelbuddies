@@ -62,13 +62,13 @@
                         </div>
 
                         <img src="assets/img/profile-female.jpg" data-toggle="modal" data-target="#avatarUpload"
-                            class="avatar">
+                            class="avatar js-avatar">
                         <h2 id="profile-name-and-age"></h2>
                     </div>
                 </div>
 
                 <div id="profile-mid-page">
-                    <form action="">
+                    <form action="" class="js-profile-details">
                         <label for="birthday" data-translate="profile.editBirthday">✎ Edit birthday</label>
                         <input type='date' id='birthday' class="form-control">
 
@@ -85,9 +85,6 @@
 
                     <a href="categories.html"><button class="tag-button" data-translate="profile.button">edit
                             tags</button></a>
-
-
-
                 </div>
             </div>
 
@@ -357,7 +354,7 @@
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="profile-image-form" action="#">
+                <form id="profile-image-form" action="#" method="post">
                     <div class="modal-header">
                         <h5 class="modal-title" id="avatarUploadLabel">Upload nieuwe avatar</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
