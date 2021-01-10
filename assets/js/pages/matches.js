@@ -123,6 +123,39 @@ $(document).ready(async () => {
 
     async function renderPotentialMatch() {
         if (otherUserId === -1) {
+            // No matches found
+            let avatarElement = $('<div>')
+                .addClass('card')
+                .addClass('card-potential-buddy')
+                .append(
+                    $('<div>')
+                        .addClass('card')
+                        .addClass('mb-3')
+                )
+                .append(
+                    $('<img>')
+                        .addClass('card-img-top')
+                        .attr('src', '/assets/img/profile/girl.jpg')
+                )
+                .append(
+                    $('<div>')
+                        .addClass('card-body')
+                        .append(
+                            $('<h5>')
+                                .addClass('card-title')
+                                .attr('data-translate', 'matches.noMatchTitle')
+                                .text('Geen potentiele match :(')
+                        )
+                        .append(
+                            $('<p>')
+                                .addClass('card-text')
+                                .attr('data-translate', 'matches.noMatchMessage')
+                                .text('Je vind iedereen zo interessant dat ze rechts staan ipv hier :)')
+                        )
+                )
+
+            $("#match_potential h3").after(avatarElement);
+            updateTranslations();
             return;
         }
 
